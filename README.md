@@ -43,3 +43,10 @@ documentディレクトリに格納
 - bootstrap
 - pry-rails
 - ransack
+
+### 就業Termからの実装内容
+- 友達つながり機能
+- 1:1メッセージ機能
+
+### カリキュラム外からの実装内容
+- 検索機能をransackにて実装
