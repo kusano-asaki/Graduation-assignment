@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  legend: 1
+  platform: 1
+  voice_chat: 1
+  play_style: MyString
+  time_to_play: 2020-09-29 15:56:12
+  favorite_weapon: MyString
+  rank: 1
+  killdeath_point: 1.5
+  free: MyString
+
+two:
+  legend: 1
+  platform: 1
+  voice_chat: 1
+  play_style: MyString
+  time_to_play: 2020-09-29 15:56:12
+  favorite_weapon: MyString
+  rank: 1
+  killdeath_point: 1.5
+  free: MyString
