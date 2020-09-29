@@ -1,0 +1,43 @@
+<%= link_to '一覧', players_path %>
+
+<%= form_with(model: @player, local: true) do |f| %>
+<div class="form-group">
+  <%= f.label :legend %>
+  <%= f.select :legend, Player.legends.keys, {prompt: "選択してください"} %>
+</div>
+<div class="form-group">
+  <%= f.label :platform %>
+  <%= f.select :platform, Player.platforms.keys, {prompt: "選択してください"} %>
+</div>
+<div class="form-group">
+  <%= f.label :rank %>
+  <%= f.select :rank, Player.ranks.keys, {prompt: "選択してください"} %>
+</div>
+<div class="form-group">
+  <%= f.label :voice_chat %>
+  <%= f.select :voice_chat, Player.voice_chats.keys, {prompt: "選択してください"} %>
+</div>
+<div class="form-group">
+  <%= f.label :play_style %>
+  <%= f.text_area :play_style %>
+</div>
+<div class="form-group">
+  <%= f.label :time_to_play %>
+  <%= f.time_select :time_to_play %>
+</div>
+<div class="form-group">
+  <%= f.label :favorite_weapon %>
+  <%= f.text_field :favorite_weapon %>
+</div>
+<div class="form-group">
+  <%= f.label :killdeath_point %>
+  <%= f.text_field :killdeath_point %>
+</div>
+<div class="form-group">
+  <%= f.label :free %>
+  <%= f.text_area :free %>
+</div>
+
+
+<%= f.submit %>
+<% end %>
