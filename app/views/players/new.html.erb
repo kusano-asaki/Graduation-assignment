@@ -1,2 +1,5 @@
 <h1>プレイヤーの新規登録</h1>
+<nav class="justify-content-end">
+  <%= link_to '一覧', players_path, class: 'btn btn-primary' %>
+</nav>
 <%= render 'form', player: @player %>

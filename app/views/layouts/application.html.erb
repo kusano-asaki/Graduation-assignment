@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">APTeamFactory</a>
+    </nav>
+    <div class="container">
+      <% if flash.notice.present? %>
+        <div class="alert alert-info">
+          <%= flash.notice %>
+        </div>
+      <% end %>
     <%= yield %>
+  </div>
   </body>
 </html>

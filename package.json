@@ -1,5 +1,8 @@
 {
   "name": "AP_Team_Factory",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "3",
+    "jquery": "^3.5.1"
+  }
 }
