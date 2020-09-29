@@ -1,21 +1,32 @@
 <%= link_to '一覧', players_path %>
 
 <%= form_with(model: @player, local: true) do |f| %>
+<% if @player.errors.any? %>
+<div id="error_explanation">
+  <h2><%= @player.errors.count %>件のエラーがあります</h2>
+  <% @player.errors.full_messages.each do |msg| %>
+  <ul>
+    <li><%= msg %></li>
+  </ul>
+  <% end %>
+</div>
+<% end %>
+
 <div class="form-group">
   <%= f.label :legend %>
-  <%= f.select :legend, Player.legends.keys, {prompt: "選択してください"} %>
+  <%= f.select :legend, Player.legends.keys, prompt: t('helpers.select.prompt')  %>
 </div>
 <div class="form-group">
   <%= f.label :platform %>
-  <%= f.select :platform, Player.platforms.keys, {prompt: "選択してください"} %>
+  <%= f.select :platform, Player.platforms.keys, prompt: t('helpers.select.prompt') %>
 </div>
 <div class="form-group">
   <%= f.label :rank %>
-  <%= f.select :rank, Player.ranks.keys, {prompt: "選択してください"} %>
+  <%= f.select :rank, Player.ranks.keys, prompt: t('helpers.select.prompt') %>
 </div>
 <div class="form-group">
   <%= f.label :voice_chat %>
-  <%= f.select :voice_chat, Player.voice_chats.keys, {prompt: "選択してください"} %>
+  <%= f.select :voice_chat, Player.voice_chats.keys, prompt: t('helpers.select.prompt') %>
 </div>
 <div class="form-group">
   <%= f.label :play_style %>
@@ -23,7 +34,7 @@
 </div>
 <div class="form-group">
   <%= f.label :time_to_play %>
-  <%= f.time_select :time_to_play %>
+  <%= f.time_select :time_to_play, { minute_step: 15 } %>
 </div>
 <div class="form-group">
   <%= f.label :favorite_weapon %>
