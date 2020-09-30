@@ -9,5 +9,6 @@
     <li><%= t 'attributes.player.rank'%>:<%= player.rank %></li>
     <li><%= t 'attributes.player.play_style'%>:<%= player.play_style %></li>
     <li><%= t 'attributes.player.free'%>:<%= player.free %></li>
+    <%= link_to 'プレイヤー詳細', player_path(player), class: 'btn btn-primary' %>
   </ul>
 <% end %>

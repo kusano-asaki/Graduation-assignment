@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_065612) do
+ActiveRecord::Schema.define(version: 2020_09_30_053110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "players", force: :cascade do |t|
-    t.integer "legend", null: false
-    t.integer "platform", null: false
-    t.integer "voice_chat", null: false
+    t.integer "legend", default: 0, null: false
+    t.integer "platform", default: 0, null: false
+    t.integer "voice_chat", default: 0, null: false
     t.string "play_style"
     t.time "time_to_play", null: false
     t.string "favorite_weapon"
-    t.integer "rank", null: false
-    t.float "killdeath_point"
+    t.integer "rank", default: 0, null: false
+    t.float "killdeath_point", default: 0.0
     t.string "free"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
