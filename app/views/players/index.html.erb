@@ -1,0 +1,14 @@
+<h1>プレイヤー一覧</h1>
+<%= link_to '新規登録', new_player_path, class: 'btn btn-primary' %>
+
+
+<% @players.each do |player| %>
+  <ul>
+    <li><%= t 'attributes.player.legend'%>:<%= player.legend %></li>
+    <li><%= t 'attributes.player.platform'%>:<%= player.platform %></li>
+    <li><%= t 'attributes.player.rank'%>:<%= player.rank %></li>
+    <li><%= t 'attributes.player.play_style'%>:<%= player.play_style %></li>
+    <li><%= t 'attributes.player.free'%>:<%= player.free %></li>
+    <%= link_to 'プレイヤー詳細', player_path(player), class: 'btn btn-primary' %>
+  </ul>
+<% end %>

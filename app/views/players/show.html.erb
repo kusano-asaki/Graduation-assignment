@@ -1,0 +1,17 @@
+<h1>プレイヤーの詳細</h1>
+
+<div class="player_detail">
+  <ul>
+    <li><%= t 'attributes.player.legend'%>:<%= @player.legend %></li>
+    <li><%= t 'attributes.player.platform'%>:<%= @player.platform %></li>
+    <li><%= t 'attributes.player.rank'%>:<%= @player.rank %></li>
+    <li><%= t 'attributes.player.voice_chat'%>:<%= @player.voice_chat %></li>
+    <li><%= t 'attributes.player.play_style'%>:<%= @player.play_style %></li>
+    <li><%= t 'attributes.player.time_to_play'%>:<%= @player.time_to_play.strftime("%H時%M分") %></li>
+    <li><%= t 'attributes.player.favorite_weapon'%>:<%= @player.favorite_weapon %></li>
+    <li><%= t 'attributes.player.killdeath_point'%>:<%= @player.killdeath_point %></li>
+    <li><%= t 'attributes.player.free'%>:<%= @player.free %></li>
+  </ul>
+</div>
+
+<%= link_to '戻る', players_path, class: 'btn btn-primary' %>
