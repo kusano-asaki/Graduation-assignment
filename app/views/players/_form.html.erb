@@ -9,10 +9,10 @@
 </div>
 <% end %>
 
-<%= form_with(model: player, local: true) do |f| %>
+<%= form_with(model: @player, local: true) do |f| %>
 <div class="form-group">
   <%= f.label :legend %>
-  <%= f.select :legend, Player.legends.keys, prompt: t('helpers.select.prompt')  %>
+  <%= f.select :legend, Player.legends.keys, prompt: t('helpers.select.prompt') %>
 </div>
 <div class="form-group">
   <%= f.label :platform %>
@@ -28,7 +28,7 @@
 </div>
 <div class="form-group">
   <%= f.label :play_style %>
-  <%= f.text_area :play_style %>
+  <%= f.text_area :play_style, rows: 1, class: 'form-control' %>
 </div>
 <div class="form-group">
   <%= f.label :time_to_play %>
@@ -36,15 +36,15 @@
 </div>
 <div class="form-group">
   <%= f.label :favorite_weapon %>
-  <%= f.text_field :favorite_weapon %>
+  <%= f.text_field :favorite_weapon, rows: 2,class: 'form-control' %>
 </div>
 <div class="form-group">
   <%= f.label :killdeath_point %>
-  <%= f.text_field :killdeath_point %>
+  <%= f.text_field :killdeath_point, class: 'form-control' %>
 </div>
 <div class="form-group">
   <%= f.label :free %>
-  <%= f.text_area :free %>
+  <%= f.text_area :free, rows: 5, class: 'form-control' %>
 </div>
 
 
