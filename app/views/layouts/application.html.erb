@@ -14,9 +14,9 @@
       <a class="navbar-brand" href="#">APTeamFactory</a>
     </nav>
     <div class="container">
-      <% if flash.notice.present? %>
+      <% flash.each do |key, value| %>
         <div class="alert alert-info">
-          <%= flash.notice %>
+          <%= content_tag(:div, value, class: "#{key}") %>
         </div>
       <% end %>
     <%= yield %>
