@@ -13,5 +13,10 @@
     <li><%= t 'attributes.player.free'%>:<%= @player.free %></li>
   </ul>
 </div>
-<p><%= link_to '編集', edit_player_path(@player.id), class: 'btn btn-primary' %></p>
+<p>
+  <%= link_to '編集', edit_player_path(@player.id), class: 'btn btn-primary' %>
+  <%= link_to '削除', player_path(@player.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-primary' %>
+</p>
+
+
 <p><%= link_to '一覧', players_path, class: 'btn btn-primary' %></p>

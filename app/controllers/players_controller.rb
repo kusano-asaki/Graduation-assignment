@@ -34,6 +34,12 @@ class PlayersController < ApplicationController
     end
   end
 
+  def destroy
+    @player = Player.find(params[:id])
+    @player.destroy
+    redirect_to players_path, notice: '削除しました'
+  end
+
   private
   def player_params
     params.require(:player).permit(:legend, :platform, :voice_chat, :play_style, :time_to_play, :favorite_weapon, :rank, :killdeath_point, :free)
