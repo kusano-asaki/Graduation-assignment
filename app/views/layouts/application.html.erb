@@ -10,13 +10,22 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">APTeamFactory</a>
+    <nav class="app-title navbar navbar-expand-md navbar-light bg-light">
+      <a class="navbar-brand">APTeamFactory</a>
+      <ul class="navbar-nav ml-auto">
+        <% if current_user %>
+          <li class="nav-item"><%= link_to 'マイページ', user_path(current_user.id) %></li>
+          <li class="nav-item"><%= link_to 'ログアウト', session_path(current_user.id), method: :delete %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to 'ログイン', new_session_path %></li>
+          <li class="nav-item"><%= link_to 'サインアップ', new_user_path %></li>
+        <% end %>
+      </ul>
     </nav>
     <div class="container">
-      <% if flash.notice.present? %>
+      <% flash.each do |key, value| %>
         <div class="alert alert-info">
-          <%= flash.notice %>
+          <%= content_tag(:div, value, class: "#{key}") %>
         </div>
       <% end %>
     <%= yield %>

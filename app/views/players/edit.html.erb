@@ -1,2 +1,6 @@
-<h1>Players#edit</h1>
-<p>Find me in app/views/players/edit.html.erb</p>
+<h1>プレイヤーの編集</h1>
+<nav class="justify-content-end">
+  <%= link_to '一覧', players_path, class: 'btn btn-primary' %>
+</nav>
+<%= render 'form', player: @player %><br>
+<p><%= link_to '戻る', player_path(@player.id), class: 'btn btn-primary' %></p>

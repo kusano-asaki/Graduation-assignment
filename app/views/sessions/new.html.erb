@@ -1,20 +1,5 @@
-<h1>Sign Up</h1>
-<% if @user.errors.any? %>
-<div id="error_explanation">
-  <h2><%= t 'errors.template.body'%></h2>
-  <% @user.errors.full_messages.each do |msg| %>
-  <ul>
-    <li><%= msg %></li>
-  </ul>
-  <% end %>
-</div>
-<% end %>
-
-<%= form_with(model: @user, local: true) do |f| %>
-<div class="form-group">
-  <%= f.label :name, t('attributes.user.name') %>
-  <%= f.text_field :name, class: 'form-control' %>
-</div>
+<h1>Log In</h1>
+<%= form_with(scope: :session, url: sessions_path, local:true) do |f| %>
 <div class="form-group">
   <%= f.label :email, t('attributes.user.email') %>
   <%= f.email_field :email , class: 'form-control'%>
@@ -28,5 +13,5 @@
   <%= f.password_field :password_confirmation, class: 'form-control' %>
 </div>
 
-<%= f.submit nil, class: 'btn btn-primary' %>
+<%= f.submit 'ログイン', class: 'btn btn-primary' %>
 <% end %>
