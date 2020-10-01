@@ -3,4 +3,4 @@
   <%= link_to '一覧', players_path, class: 'btn btn-primary' %>
 </nav>
 <%= render 'form', player: @player %><br>
-<p><%= link_to '戻る', player_path(@player.id), class: 'btn btn-primary' %></p>
+<p><%= link_to '戻る', user_path(@player.user.id), class: 'btn btn-primary' %></p>
