@@ -9,42 +9,43 @@
 </div>
 <% end %>
 
-<%= form_with(model: player, local: true) do |f| %>
+<%= form_with(model: @player, local: true) do |f| %>
 <div class="form-group">
-  <%= f.label :legend %>
-  <%= f.select :legend, Player.legends.keys, prompt: t('helpers.select.prompt')  %>
+  <%= f.label :legend, t('attributes.player.legend') %>:
+  <%= f.select :legend, Player.legends.keys, prompt: t('helpers.select.prompt') %>
 </div>
 <div class="form-group">
-  <%= f.label :platform %>
+  <%= f.label :platform, t('attributes.player.platform') %>:
   <%= f.select :platform, Player.platforms.keys, prompt: t('helpers.select.prompt') %>
 </div>
 <div class="form-group">
-  <%= f.label :rank %>
+  <%= f.label :rank , t('attributes.player.rank') %>:
   <%= f.select :rank, Player.ranks.keys, prompt: t('helpers.select.prompt') %>
 </div>
 <div class="form-group">
-  <%= f.label :voice_chat %>
+  <%= f.label :voice_chat , t('attributes.player.voice_chat') %>:
   <%= f.select :voice_chat, Player.voice_chats.keys, prompt: t('helpers.select.prompt') %>
 </div>
 <div class="form-group">
-  <%= f.label :play_style %>
-  <%= f.text_area :play_style %>
+  <%= f.label :play_style, t('attributes.player.play_style') %>:
+  <%= f.text_field :play_style, placeholder: 'ランクがつがつやります！', class: 'form-control' %>
 </div>
 <div class="form-group">
-  <%= f.label :time_to_play %>
+  <%= f.label :time_to_play, t('attributes.player.time_to_play') %>:
   <%= f.time_select :time_to_play, { minute_step: 15 } %>
 </div>
 <div class="form-group">
-  <%= f.label :favorite_weapon %>
-  <%= f.text_field :favorite_weapon %>
+  <%= f.label :favorite_weapon, t('attributes.player.favorite_weapon') %>:
+  <%= f.text_field :favorite_weapon, placeholder: 'ウィンググマン', class: 'form-control' %>
 </div>
 <div class="form-group">
-  <%= f.label :killdeath_point %>
-  <%= f.text_field :killdeath_point %>
+  <%= f.label :killdeath_point, t('attributes.player.killdeath_point') %>:
+  <%= f.number_field :killdeath_point, step: "0.01", min: 0, max: 57, class: 'form-control' %>
 </div>
 <div class="form-group">
-  <%= f.label :free %>
-  <%= f.text_area :free %>
+  <%= f.label :free, t('attributes.player.free') %>:
+  <%= f.text_area :free, placeholder: 'はじめまして。初心者なのでかなり下手です。同じように始めたばかりの方で楽しくプレイできる方コメントをお待ちしております！',
+                         rows: 5, class: 'form-control' %>
 </div>
 
 
