@@ -13,7 +13,7 @@ class PlayersController < ApplicationController
   end
 
   def create
-    @player = Player.new(player_params)
+    @player = current_user.players.new(player_params)
     if @player.save
       redirect_to player_path(@player), notice: '登録しました'
     else

@@ -4,6 +4,7 @@
 
 <% @players.each do |player| %>
   <ul>
+    <li><%= t 'attributes.player.user_name'%>:<%= player.user.name %></li>
     <li><%= t 'attributes.player.legend'%>:<%= player.legend %></li>
     <li><%= t 'attributes.player.platform'%>:<%= player.platform %></li>
     <li><%= t 'attributes.player.rank'%>:<%= player.rank %></li>
