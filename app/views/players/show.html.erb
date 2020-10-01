@@ -13,5 +13,5 @@
     <li><%= t 'attributes.player.free'%>:<%= @player.free %></li>
   </ul>
 </div>
-
-<%= link_to '戻る', players_path, class: 'btn btn-primary' %>
+<p><%= link_to '編集', edit_player_path(@player.id), class: 'btn btn-primary' %></p>
+<p><%= link_to '一覧', players_path, class: 'btn btn-primary' %></p>
