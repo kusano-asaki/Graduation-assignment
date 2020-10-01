@@ -1,7 +1,17 @@
-<h1>User詳細</h1>
-<div>
+<h1><%= @user.name %>さんの詳細</h1>
+<%= link_to 'player新規登録', new_player_path, class: 'btn btn-primary' %>
+<% @players.each do |player| %>
   <ul>
-    <li><%= t 'attributes.user.name'%>:<%= @user.name %></li>
-    <li><%= t 'attributes.user.email'%>:<%= @user.email %></li>
+    <li><%= t 'attributes.player.legend' %>:<%= player.legend %></li>
+    <li><%= t 'attributes.player.platform' %>:<%= player.platform %></li>
+    <li><%= t 'attributes.player.rank' %>:<%= player.rank %></li>
+    <li><%= t 'attributes.player.voice_chat' %>:<%= player.voice_chat %></li>
+    <li><%= t 'attributes.player.play_style' %>:<%= player.play_style %></li>
+    <li><%= t 'attributes.player.time_to_play' %>:<%= player.time_to_play.strftime("%H時%M分") %></li>
+    <li><%= t 'attributes.player.favorite_weapon' %>:<%= player.favorite_weapon %></li>
+    <li><%= t 'attributes.player.killdeath_point' %>:<%= player.killdeath_point %></li>
+    <li><%= t 'attributes.player.free' %>:<%= player.free %></li>
+    <%= link_to '編集', edit_player_path(player.id), class: 'btn btn-primary' %>
+    <%= link_to '削除', player_path(player.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-primary' %>
   </ul>
-</div>
+<% end %>
