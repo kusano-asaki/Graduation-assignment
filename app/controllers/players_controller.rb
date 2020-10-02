@@ -1,11 +1,12 @@
 class PlayersController < ApplicationController
-  before_action :set_player, only: [:show, :edit, :update, :destroy]
+  before_action :set_player, only: [:edit, :update, :destroy]
 
   def index
-    @players = Player.all
+    @players = Player.all.includes(:user)
   end
 
   def show
+    @player = Player.find(params[:id])
   end
 
   def new
@@ -13,9 +14,9 @@ class PlayersController < ApplicationController
   end
 
   def create
-    @player = Player.new(player_params)
+    @player = current_user.players.new(player_params)
     if @player.save
-      redirect_to player_path(@player), notice: '登録しました'
+      redirect_to user_path(current_user.id), notice: '登録しました'
     else
       render :new
     end
@@ -27,7 +28,7 @@ class PlayersController < ApplicationController
 
   def update
     if @player.update(player_params)
-      redirect_to player_path(@player), notice: '更新しました'
+      redirect_to user_path(current_user.id), notice: '更新しました'
     else
       render :edit
     end
@@ -35,7 +36,7 @@ class PlayersController < ApplicationController
 
   def destroy
     @player.destroy
-    redirect_to players_path, notice: '削除しました'
+    redirect_to user_path(current_user.id), notice: '削除しました'
   end
 
   private
@@ -44,6 +45,6 @@ class PlayersController < ApplicationController
   end
 
   def set_player
-    @player = Player.find(params[:id])
+    @player = current_user.players.find(params[:id])
   end
 end

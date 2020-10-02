@@ -5,4 +5,6 @@ class Player < ApplicationRecord
   enum platform: { PS4:0, PC:1, Xbox:2 }
   enum voice_chat: { やる:0, やらない:1 }
   enum rank: { 遊ばない:0, ブロンズ:1, シルバー:2, ゴールド:3, プラチナ:4, ダイヤ:5, マスター＆プレデター:6 }
+
+  belongs_to :user
 end
