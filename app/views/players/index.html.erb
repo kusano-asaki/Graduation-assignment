@@ -32,6 +32,7 @@
       <%= image_tag 'ローバApex Legends_20201001223627.jpg', width: '130px', height: '180px' %>
       <% elsif player.legend == "ワットソン" %>
       <%= image_tag 'ワットソンApex Legends_20201001223603.jpg', width: '130px', height: '180px' %>
+      <% else %>
       <% end %>
     </div>
     <li><%= t 'attributes.player.user_name'%>:<%= player.user.name %></li>
