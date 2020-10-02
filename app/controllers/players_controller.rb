@@ -2,7 +2,8 @@ class PlayersController < ApplicationController
   before_action :set_player, only: [:edit, :update, :destroy]
 
   def index
-    @players = Player.all.includes(:user)
+    @q = Player.ransack(params[:q])
+    @players = @q.result.includes(:user)
   end
 
   def show
