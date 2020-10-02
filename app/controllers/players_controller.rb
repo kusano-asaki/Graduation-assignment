@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
   before_action :set_player, only: [:edit, :update, :destroy]
 
   def index
-    @players = Player.all
+    @players = Player.all.includes(:user)
   end
 
   def show
