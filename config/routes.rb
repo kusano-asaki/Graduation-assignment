@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+  get 'relationships/destroy'
   root to: 'players#index'
+  
   resources :players
   resources :users, only: [:new, :show, :create] do
     get :follow, on: :member

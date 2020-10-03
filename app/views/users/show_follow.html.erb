@@ -1,15 +1,11 @@
 <h4>フォロー一覧</h4>
 <% @following_users.each do |follow_user| %>
-  <ul>
-    <li><%= follow_user.name %></li>
-    <li></li>
-  </ul>
+    <%= follow_user.name %>
+    <%= render 'follow_form', user: follow_user %>
 <% end %>
 
 <h4>フォロワー一覧</h4>
 <% @followers_users.each do |follower_user| %>
-<ul>
-  <li><%= follower_user.name %></li>
-  <li></li>
-</ul>
+  <%= follower_user.name %>
+  <%= render 'follow_form', user: follower_user %>
 <% end %>
