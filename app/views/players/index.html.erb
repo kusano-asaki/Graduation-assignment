@@ -1,5 +1,9 @@
 <h1>プレイヤー一覧</h1>
-<%= link_to 'player新規登録', new_player_path, class: 'btn btn-primary' %>
+<%= render 'search' %>
+
+<p><%= link_to 'player新規登録', new_player_path, class: 'btn btn-primary' %></p>
+
+<p><%= sort_link(@q, :killdeath_point, "#{t('attributes.player.killdeath_point')}sort",  default_order: :desc) %></p>
 
 <% @players.each do |player| %>
   <ul>
@@ -32,6 +36,7 @@
       <%= image_tag 'ローバApex Legends_20201001223627.jpg', width: '130px', height: '180px' %>
       <% elsif player.legend == "ワットソン" %>
       <%= image_tag 'ワットソンApex Legends_20201001223603.jpg', width: '130px', height: '180px' %>
+      <% else %>
       <% end %>
     </div>
     <li><%= t 'attributes.player.user_name'%>:<%= player.user.name %></li>
