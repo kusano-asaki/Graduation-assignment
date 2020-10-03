@@ -8,7 +8,6 @@
 <h4>フォロワー一覧</h4>
 <% @followers_users.each do |follower_user| %>
   <%= follower_user.name %>
-  <%= render 'follow_form', user: follower_user %>
 <% end %>
 
 
