@@ -10,6 +10,13 @@ class UsersController < ApplicationController
     @players = @user.players
   end
 
+  def follow
+    @user = User.find(params[:id])
+    @following_users = @user.following
+    @followers_users = @user.followers
+    render 'show_follow'
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
