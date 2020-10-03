@@ -12,9 +12,14 @@ class UsersController < ApplicationController
 
   def follow
     @user = User.find(params[:id])
-    @following_users = @user.following
-    @followers_users = @user.followers
-    render 'show_follow'
+    if @user == current_user
+      @following_users = @user.following
+      @followers_users = @user.followers
+      # binding.pry
+      render 'show_follow'
+    else
+      redirect_to user_path(current_user.id), notice: '他のユーザーのフォロー/フォロワーリストへはアクセスできません'
+    end
   end
 
   def create
