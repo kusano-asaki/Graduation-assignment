@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
-  before_action :set_player, only: [:edit, :update, :destroy]
+  before_action :set_player, only: [:show, :edit, :update, :destroy]
+  before_action :current_user_check, only: [:edit]
 
   def index
     @q = Player.ransack(params[:q])
@@ -46,6 +47,13 @@ class PlayersController < ApplicationController
   end
 
   def set_player
-    @player = current_user.players.find(params[:id])
+    @player = Player.find(params[:id])
+  end
+
+  def current_user_check
+    @player = Player.find(params[:id])
+    unless current_user.id == @player.user_id
+      redirect_to user_path(current_user.id), notice: '他のユーザーデータは編集できません'
+    end
   end
 end
