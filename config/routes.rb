@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'messages/index'
   get 'conversations/index'
   get 'relationships/create'
   get 'relationships/destroy'
