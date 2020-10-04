@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   before_action do
     @conversation = Conversation.find(params[:conversation_id])
   end
+  before_action :current_user_check, only: [:index]
 
   def index
     @messages = @conversation.messages
@@ -24,5 +25,12 @@ class MessagesController < ApplicationController
   private
   def message_params
     params.require(:message).permit(:body, :user_id)
+  end
+
+  def current_user_check
+    @conversation = Conversation.find(params[:conversation_id])
+    unless @current_user.id == @conversation.sender_id || @conversation.recipient_id
+      redirect_to user_path(current_user.id), notice: 'アクセス権限はありません'
+    end
   end
 end
