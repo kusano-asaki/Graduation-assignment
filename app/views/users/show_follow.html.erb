@@ -2,12 +2,14 @@
 <% @following_users.each do |follow_user| %>
   <%= follow_user.name %>
   <%= render 'follow_form', user: follow_user %>
+  <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: follow_user.id), method: :post, class: 'btn btn-primary' %>
 <% end %>
 
 
 <h4>フォロワー一覧</h4>
 <% @followers_users.each do |follower_user| %>
   <%= follower_user.name %>
+  <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: follower_user.id), method: :post, class: 'btn btn-primary' %>
 <% end %>
 
 

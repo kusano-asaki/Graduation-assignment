@@ -5,7 +5,10 @@ class MessagesController < ApplicationController
 
   def index
     @messages = @conversation.messages
-    @messages = @messages.order(created_at)
+    if @messages.last
+      @messages.where.not(user_id: current_user.id).update_all(read: true)
+    end
+    @messages = @messages.order(:created_at)
     @message = @conversation.messages.build
   end
 
