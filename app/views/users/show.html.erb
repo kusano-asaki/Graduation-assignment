@@ -1,6 +1,7 @@
 <h1><%= @user.name %>さんの詳細</h1>
 <% if current_user.id == @user.id  %>
   <%= link_to 'player新規登録', new_player_path, class: 'btn btn-primary' %>
+  <%= link_to '一覧', players_path, class: 'btn btn-primary' %>
   <%= link_to 'フォロー/フォロワーリスト', follow_user_path(current_user.id), class: 'btn btn-primary' %>
 <% end %>
 <% @players.each do |player| %>
