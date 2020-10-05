@@ -15,15 +15,21 @@
  *= require_self
  */
 
+html {
+  height: 100%;
+}
+
 header {
-  background-color: black;
+  background-color: #000;
   }
 
  body {
-   margin-top: 33px;
+   height: 100%;
+   position: relative;
  }
+
 footer {
-  background-color: black;
+  background-color: #000;
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -44,4 +50,9 @@ footer {
 
 .right-msg {
   text-align: right;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
 }
