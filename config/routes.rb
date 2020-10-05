@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get 'messages/index'
-  get 'conversations/index'
-  get 'relationships/create'
-  get 'relationships/destroy'
-  root to: 'players#index'
+  root to: 'tops#index'
 
+  resources :tops, only: [:index]
+  get 'tops/detail'
   resources :players
   resources :users, only: [:new, :show, :create] do
     get :follow, on: :member
