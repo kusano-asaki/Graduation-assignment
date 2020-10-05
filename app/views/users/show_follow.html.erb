@@ -1,14 +1,18 @@
-<h4>フォロー一覧</h4>
+<h3>フォロー一覧</h3>
 <% @following_users.each do |follow_user| %>
-  <%= follow_user.name %>
-  <%= render 'follow_form', user: follow_user %>
+  <table>
+    <td><%= follow_user.name %></td>
+    <td><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: follow_user.id), method: :post, class: 'btn btn-primary' %></td>
+    <td><%= render 'follow_form', user: follow_user %></td>
+  </table>
 <% end %>
 
-
-<h4>フォロワー一覧</h4>
+<h3>フォロワー一覧</h3>
 <% @followers_users.each do |follower_user| %>
-  <%= follower_user.name %>
+  <table>
+    <td><%= follower_user.name %></td>
+    <td><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: follower_user.id), method: :post, class: 'btn btn-primary' %></td>
+  </table>
 <% end %>
-
 
 <p><%= link_to '戻る', user_path(current_user.id), class: 'btn btn-primary' %></p>
