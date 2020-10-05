@@ -15,6 +15,28 @@
  *= require_self
  */
 
+header {
+  background-color: black;
+  }
+
+ body {
+   margin-top: 33px;
+ }
+footer {
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+#footer_text {
+  color: #fff;
+  text-align: center;
+}
+
+.navbar-nav {
+  text-align: right;
+}
 
 .left-msg {
   text-align: left;
