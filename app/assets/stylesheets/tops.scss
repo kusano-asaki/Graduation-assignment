@@ -19,6 +19,12 @@
   background-blend-mode: lighten;
 }
 
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .top_link {
   margin-left: 30px;
 }

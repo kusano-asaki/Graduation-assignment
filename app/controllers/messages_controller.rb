@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
   before_action :current_user_check, only: [:index]
 
   def index
+    binding.pry
     @messages = @conversation.messages
     if @messages.last
       @messages.where.not(user_id: current_user.id).update_all(read: true)
