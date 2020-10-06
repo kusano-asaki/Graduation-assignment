@@ -21,6 +21,9 @@ html {
 
 header {
   background-color: #000;
+  position: fixed;
+  top: 0;
+
   }
 
  body {
@@ -32,6 +35,7 @@ footer {
   margin-top: auto;
   width: 100%;
   bottom: 0;
+  position: fixed;
 }
 
 #footer_text {
@@ -58,4 +62,10 @@ a {
 
 p {
   margin: 0;
+}
+
+#alert_form {
+  position: absolute;
+  top: 70px;
+  right: 100px;
 }
