@@ -1,41 +1,56 @@
-<h1><%= @user.name %>さんの詳細</h1>
+<div id="user_title">
+  <h1><%= @user.name %>さんの詳細</h1>
+</div>
 <% if current_user.id == @user.id  %>
-  <%= link_to 'player新規登録', new_player_path, class: 'btn btn-primary' %>
-  <%= link_to '一覧', players_path, class: 'btn btn-primary' %>
-  <%= link_to 'フォロー/フォロワーリスト', follow_user_path(current_user.id), class: 'btn btn-primary' %>
+<div class="list-name"><%= link_to 'フォロー/フォロワーリスト', follow_user_path(current_user.id), class: 'btn btn-info' %>
+</div>
+<div class="list-name"><%= link_to 'player 新規登録', new_player_path, class: 'btn btn-info' %>
+</div>
 <% end %>
-<% @players.each do |player| %>
-  <ul>
-    <div class="legend_image">
-      <% if player.legend == "オクタン" %>
-      <%= image_tag 'オクタンApex Legends_20201001223559.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "クリプト" %>
-      <%= image_tag 'クリプトApex Legends_20201001223639.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "コースティック" %>
-      <%= image_tag 'コースティックApex Legends_20201001223537.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "ジブラルタル" %>
-      <%= image_tag 'ジブラルタルApex Legends_20201001223502.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "パスファインダー" %>
-      <%= image_tag 'パスファインダーApex Legends_20201001223517.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "バンガロール" %>
-      <%= image_tag 'バンガロールApex Legends_20201001223754_1.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "ブラッドハウンド" %>
-      <%= image_tag 'ブラッドハウンドApex Legends_20201001223453.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "ミラージュ" %>
-      <%= image_tag 'ミラージュApex Legends_20201001223543.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "ライフライン" %>
-      <%= image_tag 'ライフラインApex Legends_20201001223805.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "ランパート" %>
-      <%= image_tag 'ランパートApex Legends_20201001223619.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "レイス" %>
-      <%= image_tag 'レイスApex Legends_20201001223522.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "レヴナント" %>
-      <%= image_tag 'レヴナントApex Legends_20201001223635.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "ローバ" %>
-      <%= image_tag 'ローバApex Legends_20201001223627.jpg', width: '130px', height: '180px' %>
-      <% elsif player.legend == "ワットソン" %>
-      <%= image_tag 'ワットソンApex Legends_20201001223603.jpg', width: '130px', height: '180px' %>
-      <% end %>
+
+<% if current_user.id != @user.id %>
+<div class="follow-btn">
+  <%= render 'follow_form', user: @user %>
+</div>
+<% end %>
+
+<h4 class="player-info">登録情報一覧</h4>
+<div class="row">
+  <% @players.each do |player| %>
+    <ul class="media-list col-md-6">
+      <div class="push2">
+        <div class="media-left media-image">
+          <% if player.legend == "オクタン" %>
+            <%= image_tag 'オクタンApex Legends_20201001223559.jpg', width: '150px', height: '220px' %>
+          <% elsif player.legend == "クリプト" %>
+            <%= image_tag 'クリプトApex Legends_20201001223639.jpg', width: '150px', height: '220px' %>
+          <% elsif player.legend == "コースティック" %>
+            <%= image_tag 'コースティックApex Legends_20201001223537.jpg', width: '150px', height: '220px'%>
+          <% elsif player.legend == "ジブラルタル" %>
+            <%= image_tag 'ジブラルタルApex Legends_20201001223502.jpg', width: '150px', height: '220px' %>
+          <% elsif player.legend == "パスファインダー" %>
+            <%= image_tag 'パスファインダーApex Legends_20201001223517.jpg', width: '150px', height: '220px' %>
+          <% elsif player.legend == "バンガロール" %>
+            <%= image_tag 'バンガロールApex Legends_20201001223754_1.jpg', width: '150px', height: '220px' %>
+          <% elsif player.legend == "ブラッドハウンド" %>
+            <%= image_tag 'ブラッドハウンドApex Legends_20201001223453.jpg', width: '150px', height: '220px' %>
+          <% elsif player.legend == "ミラージュ" %>
+            <%= image_tag 'ミラージュApex Legends_20201001223543.jpg', width: '150px', height: '220px' %>
+          <% elsif player.legend == "ライフライン" %>
+            <%= image_tag 'ライフラインApex Legends_20201001223805.jpg', width: '150px', height: '220px' %>
+          <% elsif player.legend == "ランパート" %>
+            <%= image_tag 'ランパートApex Legends_20201001223619.jpg', width: '150px', height: '220px' %>
+          <% elsif player.legend == "レイス" %>
+            <%= image_tag 'レイスApex Legends_20201001223522.jpg', width: '150px', height: '220px' %>
+          <% elsif player.legend == "レヴナント" %>
+            <%= image_tag 'レヴナントApex Legends_20201001223635.jpg', width: '150px', height: '220px' %>
+          <% elsif player.legend == "ローバ" %>
+            <%= image_tag 'ローバApex Legends_20201001223627.jpg', width: '150px', height: '220px' %>
+          <% elsif player.legend == "ワットソン" %>
+            <%= image_tag 'ワットソンApex Legends_20201001223603.jpg', width: '150px', height: '220px' %>
+          <% end %>
+      </div>
+      <div class="media-body">
     <li><%= t 'attributes.player.legend' %>:<%= player.legend %></li>
     <li><%= t 'attributes.player.platform' %>:<%= player.platform %></li>
     <li><%= t 'attributes.player.rank' %>:<%= player.rank %></li>
@@ -44,13 +59,18 @@
     <li><%= t 'attributes.player.time_to_play' %>:<%= player.time_to_play.strftime("%H時%M分") %></li>
     <li><%= t 'attributes.player.favorite_weapon' %>:<%= player.favorite_weapon %></li>
     <li><%= t 'attributes.player.killdeath_point' %>:<%= player.killdeath_point %></li>
-    <li><%= t 'attributes.player.free' %>:<%= player.free %></li>
+    <li><%= t 'attributes.player.free' %>:<br><%= player.free %></li>
     <% if current_user.id == @user.id  %>
-      <%= link_to '編集', edit_player_path(player.id), class: 'btn btn-primary' %>
-      <%= link_to '削除', player_path(player.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-primary' %>
+      <%= link_to '編集', edit_player_path(player.id), class: 'btn btn-info user-btn' %>
+      <%= link_to '削除', player_path(player.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-info user-btn' %>
     <% end %>
-  </ul>
+</div>
+  </div>
+</ul>
 <% end %>
-<% if current_user.id != @user.id %>
-  <%= render 'follow_form', user: @user %>
-<% end %>
+</div>
+
+<div class="text-right">
+  <%= link_to 'player 一覧', players_path, class: 'btn btn-info' %>
+</div>
+<div class="push"></div>
