@@ -1,6 +1,12 @@
-<h1>プレイヤーの編集</h1>
-<nav class="justify-content-end">
-  <%= link_to '一覧', players_path, class: 'btn btn-primary' %>
-</nav>
+<div id="player_title">
+  <h1>プレイヤーの編集</h1>
+</div>
+<div class="new-btn text-right">
+  <%= link_to 'player 一覧', players_path, class: 'btn btn-info' %>
+</div>
+<hr>
 <%= render 'form', player: @player %><br>
-<p><%= link_to '戻る', user_path(@player.user.id), class: 'btn btn-primary' %></p>
+<div class="text-right">
+  <p><%= link_to '戻る', user_path(@player.user.id), class: 'btn btn-info' %></p>
+</div>
+<div class="push"></div>

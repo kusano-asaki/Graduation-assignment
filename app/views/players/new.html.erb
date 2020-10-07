@@ -1,5 +1,10 @@
-<h1>プレイヤーの新規登録</h1>
-<nav class="justify-content-end">
-  <%= link_to '一覧', players_path, class: 'btn btn-primary' %>
-</nav>
+<div id="player_title">
+  <h1>プレイヤーの新規登録</h1>
+  <p>自分のプレイスタイルを登録していこう！</p>
+</div>
+<div class="new-btn text-right">
+  <%= link_to 'player 一覧', players_path, class: 'btn btn-info' %>
+</div>
+<hr>
 <%= render 'form', player: @player %>
+<div class="push"></div>
