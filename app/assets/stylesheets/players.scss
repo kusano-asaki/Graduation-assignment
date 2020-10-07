@@ -20,16 +20,17 @@
 }
 
 .player_sort {
-  margin-top: 10px;
+  margin: 10px 0 10px 0;
   border-bottom: 1px solid #000;
 }
+
 .player_sort a {
   text-decoration: none;
+  color: #5bc0de;
 }
 
 .search_btn {
-  background-color: #dedede;
-  margin-right: 5px;
+  margin-right: 10px;
   margin-top: 30px;
 }
 
@@ -39,23 +40,8 @@
   margin-top: 100px;
 }
 
-.card {
-  background-color: #dedede;
-}
-
-.card-body li {
-  list-style: none;
-}
-
 .player_btn {
-  margin: 5px 0 5px 0;
-}
-.col-md-6 {
-  padding-right: 5px;
-}
-
-.push2 {
-  background-color: #fff;
+  margin: 10px 10px 5px 0;
 }
 
 .push {
@@ -70,6 +56,7 @@
 .media-body h4 {
   padding: 6px;
 }
+
 .player-profile-btn {
   margin-top: 5px;
 }
@@ -78,5 +65,3 @@
 .new-btn {
   margin-bottom: 20px;
 }
-
-//edit

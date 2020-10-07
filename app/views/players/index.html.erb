@@ -1,63 +1,61 @@
 <div id="player_title">
-  <h1>プレイヤー一覧</h1>
-  <p>自分にあったユーザーを探してみよう！</p>
-<%= render 'search' %>
-<p><%= link_to 'player 新規登録', new_player_path, class: 'btn btn-info' %></p>
-
-<p class="player_sort"><%= sort_link(@q, :killdeath_point, "#{t('attributes.player.killdeath_point')} sort",  default_order: :desc) %></p>
+  <div class="row">
+    <h1>プレイヤー一覧</h1>
+    <p>自分にあったユーザーを探してみよう！</p>
+      <%= render 'search' %>
+    <p><%= link_to 'player 新規登録', new_player_path, class: 'btn btn-info' %></p>
+    <p class="player_sort"><%= sort_link(@q, :killdeath_point, "#{t('attributes.player.killdeath_point')} sort",  default_order: :desc) %></p>
+  </div>
 </div>
+
 <div class="row">
   <% @players.each do |player| %>
-  <div class="card-deck col-md-6">
-    <div class="push2">
-　　<div class="card">
-  　　<div class="row">
-        <div class="col-md-4">
+    <ul class="media-list col-md-6">
+      <div class="push2">
+        <div class="media-left media-image">
           <% if player.legend == "オクタン" %>
-            <%= image_tag 'オクタンApex Legends_20201001223559.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'オクタンApex Legends_20201001223559.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "クリプト" %>
-            <%= image_tag 'クリプトApex Legends_20201001223639.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'クリプトApex Legends_20201001223639.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "コースティック" %>
-            <%= image_tag 'コースティックApex Legends_20201001223537.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'コースティックApex Legends_20201001223537.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "ジブラルタル" %>
-            <%= image_tag 'ジブラルタルApex Legends_20201001223502.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'ジブラルタルApex Legends_20201001223502.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "パスファインダー" %>
-            <%= image_tag 'パスファインダーApex Legends_20201001223517.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'パスファインダーApex Legends_20201001223517.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "バンガロール" %>
-            <%= image_tag 'バンガロールApex Legends_20201001223754_1.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'バンガロールApex Legends_20201001223754_1.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "ブラッドハウンド" %>
-            <%= image_tag 'ブラッドハウンドApex Legends_20201001223453.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'ブラッドハウンドApex Legends_20201001223453.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "ミラージュ" %>
-            <%= image_tag 'ミラージュApex Legends_20201001223543.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'ミラージュApex Legends_20201001223543.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "ライフライン" %>
-            <%= image_tag 'ライフラインApex Legends_20201001223805.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'ライフラインApex Legends_20201001223805.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "ランパート" %>
-            <%= image_tag 'ランパートApex Legends_20201001223619.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'ランパートApex Legends_20201001223619.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "レイス" %>
-            <%= image_tag 'レイスApex Legends_20201001223522.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'レイスApex Legends_20201001223522.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "レヴナント" %>
-            <%= image_tag 'レヴナントApex Legends_20201001223635.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'レヴナントApex Legends_20201001223635.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "ローバ" %>
-            <%= image_tag 'ローバApex Legends_20201001223627.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'ローバApex Legends_20201001223627.jpg', width: '130px', height: '180px' %>
           <% elsif player.legend == "ワットソン" %>
-            <%= image_tag 'ワットソンApex Legends_20201001223603.jpg', width: '130px', height: '180px', class: 'card-img-top' %>
+            <%= image_tag 'ワットソンApex Legends_20201001223603.jpg', width: '130px', height: '180px' %>
           <% else %>
           <% end %>
         </div>
-        <div class="col-md-8">
-        <div class="card-body">
-        <h5 class="card-title"><%= t 'attributes.player.user_name'%>:<%= player.user.name %></h5>
-        <li><%= t 'attributes.player.platform'%>:<%= player.platform %></li>
-        <li><%= t 'attributes.player.rank'%>:<%= player.rank %></li>
-        <li><%= t 'attributes.player.play_style'%>:<%= player.play_style %></li>
-        <li><%= t 'attributes.player.free'%>:<br><%= player.free %></li>
+        <div class="media-body">
+          <h5 class="card-title"><%= t 'attributes.player.user_name'%>:<%= player.user.name %></h5>
+          <li><%= t 'attributes.player.platform'%>:<%= player.platform %></li>
+          <li><%= t 'attributes.player.rank'%>:<%= player.rank %></li>
+          <li><%= t 'attributes.player.play_style'%>:<%= player.play_style %></li>
+          <li><%= t 'attributes.player.free'%>:<br><%= player.free %></li>
+          <div class="text-right">
+            <%= link_to 'プレイヤー詳細', player_path(player), class: 'btn btn-info player_btn' %>
+          </div>
         </div>
-          <%= link_to 'プレイヤー詳細', player_path(player), class: 'btn btn-info player_btn' %>
-        </div>
-    </div>
-  </div>
-    </div>
-</div>
-<% end %>
+      </div>
+    </ul>
+  <% end %>
 </div>
 <div class="push"></div>
