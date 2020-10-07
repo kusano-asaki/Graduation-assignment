@@ -9,9 +9,7 @@
 <% end %>
 
 <% if current_user.id != @user.id %>
-<div class="follow-btn">
   <%= render 'follow_form', user: @user %>
-</div>
 <% end %>
 
 <h4 class="player-info">登録情報一覧</h4>
