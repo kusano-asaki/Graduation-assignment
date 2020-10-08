@@ -1,3 +1,80 @@
 // Place all the styles related to the players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//search
+.form-field {
+  border: 4px solid #2A3132;
+  border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+  margin: 2em 0;
+  padding: 2em;
+}
+
+#form-title {
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.col-form-label {
+  margin-left: 15px;
+}
+
+.player_sort {
+  margin: 10px 0 10px 0;
+  border-bottom: 1px solid #000;
+}
+
+.player_sort a {
+  text-decoration: none;
+  color: #336B87;
+  font-weight: bold;
+}
+
+.search_btn {
+  margin-right: 10px;
+  margin-top: 30px;
+}
+
+
+//player_list
+#player-body {
+height: 100%;
+}
+
+#player-body:after{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  content: "";
+  z-index: -1;
+  background: -webkit-linear-gradient(to bottom, 223deg, #EBEBEB 0%, #C5C6C8 100%), -webkit-linear-gradient(295deg, rgba(255, 255, 255, 0.5) 5%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(227deg, #EBEBEB 0%, #C5C6C8 100%), linear-gradient(155deg, rgba(255, 255, 255, 0.5) 5%, rgba(0, 0, 0, 0.5) 100%);
+  background-blend-mode: multiply;
+}
+
+
+#player_title {
+  margin-top: 100px;
+}
+
+.player_btn {
+  margin: 10px 10px 5px 0;
+}
+
+.push {
+  height: 40px;
+}
+
+//show
+.media-body h4 {
+  padding: 6px;
+}
+
+.player-profile-btn {
+  margin-top: 5px;
+}
+
+//new
+.new-btn {
+  margin-bottom: 20px;
+}

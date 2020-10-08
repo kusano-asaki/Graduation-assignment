@@ -1,3 +1,125 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//sign-up
+#sign_page {
+  background-color:  #e9e9e9;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.sign_form {
+  width: 100%;
+  max-width: 330px;
+  margin: auto;
+  padding: 15px;
+  background-color: #fff;
+}
+
+.signup_title{
+  margin: 90px 0 20px 0;
+}
+
+.signup_btn {
+  margin-bottom: 50px;
+}
+
+#error_explanation {
+  margin-top: 80px;
+}
+#error_explanation ul {
+  list-style: none;
+ }
+
+#error_explanation li {
+  text-align: left;
+}
+
+//user-show
+
+#user-body {
+  height: 100%;
+}
+
+#user-body:after{
+  position: fixed;/*固定配置*/
+  top: 0; left: 0;/*左上に固定*/
+  width: 100%; height: 100%;/*画面全体を覆う*/
+  content: "";
+  z-index: -1;/*背景にするため*/
+  background: -webkit-linear-gradient(to bottom, 223deg, #EBEBEB 0%, #C5C6C8 100%), -webkit-linear-gradient(295deg, rgba(255, 255, 255, 0.5) 5%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(227deg, #EBEBEB 0%, #C5C6C8 100%), linear-gradient(155deg, rgba(255, 255, 255, 0.5) 5%, rgba(0, 0, 0, 0.5) 100%);
+  background-blend-mode: multiply;
+}
+
+#user_title {
+  margin-top: 100px;
+}
+
+.push {
+  height: 40px;
+}
+
+// .media-list {
+//   margin-top: 10px;
+//   background-color: #fff;
+//   padding-right: 5px;
+// }
+
+// .push2 {
+//   background-color: #dedede;
+// }
+
+.user-btn {
+  margin: 10px 10px 10px 0;
+}
+
+.media-image {
+  padding: 5px 0 5px 5px;
+}
+
+.list-name {
+  margin-bottom: 5px;
+}
+
+.media-body {
+  padding-left: 8px;
+}
+.player-info {
+  margin: 30px 0 0 0;
+}
+
+//show_follow
+.follow-list {
+  margin-bottom: 5px;
+}
+
+.msg-btn {
+  margin-left: 10px;
+}
+
+.follow-btn {
+  margin-left: 5px;
+}
+
+.follow-title {
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 10px;
+}
+
+.follow-name {
+  font-size: 18px;
+  overflow-wrap: break-word;
+}
+
+.follow-back-btn {
+  margin-top: 30px;
+}

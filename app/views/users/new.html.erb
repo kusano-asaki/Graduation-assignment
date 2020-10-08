@@ -1,32 +1,32 @@
-<h1>Sign Up</h1>
-<% if @user.errors.any? %>
-<div id="error_explanation">
-  <h2><%= t 'errors.template.body'%></h2>
-  <% @user.errors.full_messages.each do |msg| %>
-  <ul>
-    <li><%= msg %></li>
-  </ul>
-  <% end %>
+<div id="wrapper">
+  <body id="sign_page">
+    <div class="sign_form">
+      <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h4><%= t 'errors.template.body'%></h4>
+          <% @user.errors.full_messages.each do |msg| %>
+          <ul>
+            <li><%= msg %></li>
+          </ul>
+          <% end %>
+      </div>
+      <% end %>
+      <h1 class="signup_title">Sign Up</h1>
+        <%= form_with(model: @user, local: true) do |f| %>
+          <div class="form-group">
+            <%= f.text_field :name, placeholder: t('attributes.user.name'), class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.email_field :email, placeholder: t('attributes.user.email'), class: 'form-control'%>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :password, placeholder: t('attributes.user.password'), class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :password_confirmation, placeholder: t('attributes.user.password_confirmation'), class: 'form-control' %>
+          </div>
+            <%= f.submit nil, class: 'btn btn-info signup_btn' %>
+        <% end %>
+      </div>
+  </body>
 </div>
-<% end %>
-
-<%= form_with(model: @user, local: true) do |f| %>
-<div class="form-group">
-  <%= f.label :name, t('attributes.user.name') %>
-  <%= f.text_field :name, class: 'form-control' %>
-</div>
-<div class="form-group">
-  <%= f.label :email, t('attributes.user.email') %>
-  <%= f.email_field :email , class: 'form-control'%>
-</div>
-<div class="form-group">
-  <%= f.label :password, t('attributes.user.password') %>
-  <%= f.password_field :password, class: 'form-control' %>
-</div>
-<div class="form-group">
-  <%= f.label :password_confirmation, t('attributes.user.password_confirmation') %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
-</div>
-
-<%= f.submit nil, class: 'btn btn-primary' %>
-<% end %>

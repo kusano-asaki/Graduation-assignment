@@ -1,3 +1,31 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.msg-title {
+  text-align: center;
+}
+
+#msg-body {
+height: 100%;
+}
+
+#msg-body:after{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  content: "";
+  z-index: -1;
+  background: -webkit-linear-gradient(to bottom, 223deg, #EBEBEB 0%, #C5C6C8 100%), -webkit-linear-gradient(295deg, rgba(255, 255, 255, 0.5) 5%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(227deg, #EBEBEB 0%, #C5C6C8 100%), linear-gradient(155deg, rgba(255, 255, 255, 0.5) 5%, rgba(0, 0, 0, 0.5) 100%);
+  background-blend-mode: multiply;
+}
+
+.left-msg {
+  text-align: left;
+}
+
+.right-msg {
+  text-align: right;
+}

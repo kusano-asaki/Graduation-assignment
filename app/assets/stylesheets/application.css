@@ -15,11 +15,48 @@
  *= require_self
  */
 
-
-.left-msg {
-  text-align: left;
+header {
+  background-color: #000;
+  position: fixed;
+  top: 0;
 }
 
-.right-msg {
+footer {
+  background-color: #000;
+  margin-top: auto;
+  width: 100%;
+  height: 25px;
+  bottom: 0;
+  position: fixed;
+}
+
+#footer_text {
+  color: #fff;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.navbar-nav {
   text-align: right;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+#alert_form {
+  position: absolute;
+  top: 70px;
+  right: 100px;
+}
+
+.btn {
+  background-color: #336B87;
+  border-color: #336B87;
+  color: #fff;
 }

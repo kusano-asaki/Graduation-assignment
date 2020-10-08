@@ -1,3 +1,51 @@
 // Place all the styles related to the tops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.text-center {
+  margin: 220px 0 0 100px;
+	display: flex;
+	align-items: flex-end;
+}
+
+#top_page {
+  background-image: url('TOP2Apex Legends_20201001224816.jpg');
+  background-position: center center;
+  background-size : cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: rgba(255,255,255,0.5);
+  background-blend-mode: lighten;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.top_link {
+  margin-left: 30px;
+}
+
+.top_link a {
+  text-decoration: none;
+}
+
+.top_links {
+  margin-left: 20px;
+}
+
+.app_detail {
+  margin-left: 300px;
+  padding: 30px;
+}
+
+.app_detail_text {
+  font-size: 18px;
+}
+
+.app-title {
+  font-size: 50px;
+}
