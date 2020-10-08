@@ -48,6 +48,6 @@
     </div>
   </div>
   <p><%= link_to "#{@player.user.name}さんの詳細データをみる", user_path(@player.user.id), class: 'btn player-profile-btn' %></p>
-  <p><%= link_to '一覧', players_path, class: 'btn player-profile-btn' %></p>
+  <p><%= link_to t('contents.link.back'), players_path, class: 'btn player-profile-btn' %></p>
   <div class="push"></div>
 </body>

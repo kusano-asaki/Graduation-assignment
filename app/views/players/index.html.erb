@@ -4,7 +4,7 @@
       <h1>プレイヤー一覧</h1>
       <p>自分にあったユーザーを探してみよう！</p>
         <%= render 'search' %>
-      <p><%= link_to 'player 新規登録', new_player_path, class: 'btn' %></p>
+      <p><%= link_to 'Player 新規登録', new_player_path, class: 'btn' %></p>
       <p class="player_sort"><%= sort_link(@q, :killdeath_point, "#{t('attributes.player.killdeath_point')} sort",  default_order: :desc) %></p>
     </div>
   </div>

@@ -3,12 +3,12 @@
     <h1>プレイヤーの編集</h1>
   </div>
   <div class="new-btn text-right">
-    <%= link_to 'player 一覧', players_path, class: 'btn' %>
+    <%= link_to t('contents.link.player-list'), players_path, class: 'btn' %>
   </div>
   <hr>
   <%= render 'form', player: @player %><br>
   <div class="text-right">
-    <p><%= link_to '戻る', user_path(@player.user.id), class: 'btn' %></p>
+    <p><%= link_to t('contents.link.back'), user_path(@player.user.id), class: 'btn' %></p>
   </div>
   <div class="push"></div>
 </body>
