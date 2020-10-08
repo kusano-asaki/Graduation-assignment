@@ -1,9 +1,10 @@
+<body id="player-body">
 <div id="player_title">
   <div class="row">
     <h1>プレイヤー一覧</h1>
     <p>自分にあったユーザーを探してみよう！</p>
       <%= render 'search' %>
-    <p><%= link_to 'player 新規登録', new_player_path, class: 'btn btn-info' %></p>
+    <p><%= link_to 'player 新規登録', new_player_path, class: 'btn' %></p>
     <p class="player_sort"><%= sort_link(@q, :killdeath_point, "#{t('attributes.player.killdeath_point')} sort",  default_order: :desc) %></p>
   </div>
 </div>
@@ -45,13 +46,14 @@
           <% end %>
         </div>
         <div class="media-body">
-          <h5 class="card-title"><%= t 'attributes.player.user_name'%>:<%= player.user.name %></h5>
+          <h4><%= t 'attributes.player.user_name'%>:<%= player.user.name %></h4>
           <li><%= t 'attributes.player.platform'%>:<%= player.platform %></li>
           <li><%= t 'attributes.player.rank'%>:<%= player.rank %></li>
+          <li><%= t 'attributes.player.killdeath_point'%>:<%= player.killdeath_point %></li>
           <li><%= t 'attributes.player.play_style'%>:<%= player.play_style %></li>
           <li><%= t 'attributes.player.free'%>:<br><%= player.free %></li>
           <div class="text-right">
-            <%= link_to 'プレイヤー詳細', player_path(player), class: 'btn btn-info player_btn' %>
+            <%= link_to 'プレイヤー詳細', player_path(player), class: 'btn player_btn' %>
           </div>
         </div>
       </div>
@@ -59,3 +61,4 @@
   <% end %>
 </div>
 <div class="push"></div>
+</body>

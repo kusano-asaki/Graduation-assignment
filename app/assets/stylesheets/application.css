@@ -15,20 +15,11 @@
  *= require_self
  */
 
-html {
-  height: 100%;
-}
-
 header {
   background-color: #000;
   position: fixed;
   top: 0;
-
-  }
-
- body {
-   height: 100%;
- }
+}
 
 footer {
   background-color: #000;
@@ -42,17 +33,10 @@ footer {
 #footer_text {
   color: #fff;
   text-align: center;
+  padding-top: 2px;
 }
 
 .navbar-nav {
-  text-align: right;
-}
-
-.left-msg {
-  text-align: left;
-}
-
-.right-msg {
   text-align: right;
 }
 
@@ -69,4 +53,10 @@ p {
   position: absolute;
   top: 70px;
   right: 100px;
+}
+
+.btn {
+  background-color: #336B87;
+  border-color: #336B87;
+  color: #fff;
 }
