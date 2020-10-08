@@ -1,34 +1,32 @@
 <body id="user-body">
-<div id="user_title">
-  <h3>フレンド一覧</h3>
-</div>
-
-<div class="row">
-  <div class="col-md-6 follow-list-form">
-    <h3 class="follow-title">フォローリスト</h3>
-      <% @following_users.each do |follow_user| %>
-        <div class="col-md-6">
-          <p class="follow-name"><%= follow_user.name %></p>
-        </div>
-        <table class="follow-list">
-          <td><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: follow_user.id), method: :post, class: 'btn msg-btn' %></td>
-          <td><div class="follow-btn"><%= render 'follow_form', user: follow_user %></div></td>
-        </table>
-      <% end %>
+  <div id="user_title">
+    <h3>フレンド一覧</h3>
   </div>
-  <div class="col-md-6 follow-list-form">
-    <h3 class="follow-title">フォロワーリスト</h3>
-      <% @followers_users.each do |follower_user| %>
-        <div class="col-md-6">
-          <p class="follow-name"><%= follower_user.name %></p>
-        </div>
-        <table class="follow-list">
-          <td><div class="follow-btn"><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: follower_user.id), method: :post, class: 'btn msg-btn' %></div></td>
-        </table>
-      <% end %>
+  <div class="row">
+    <div class="col-md-6 follow-list-form">
+      <h3 class="follow-title">フォローリスト</h3>
+        <% @following_users.each do |follow_user| %>
+          <div class="col-md-6">
+            <p class="follow-name"><%= follow_user.name %></p>
+          </div>
+          <table class="follow-list">
+            <td><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: follow_user.id), method: :post, class: 'btn msg-btn' %></td>
+            <td><div class="follow-btn"><%= render 'follow_form', user: follow_user %></div></td>
+          </table>
+        <% end %>
+    </div>
+    <div class="col-md-6 follow-list-form">
+      <h3 class="follow-title">フォロワーリスト</h3>
+        <% @followers_users.each do |follower_user| %>
+          <div class="col-md-6">
+            <p class="follow-name"><%= follower_user.name %></p>
+          </div>
+          <table class="follow-list">
+            <td><div class="follow-btn"><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: follower_user.id), method: :post, class: 'btn msg-btn' %></div></td>
+          </table>
+        <% end %>
+    </div>
   </div>
-</div>
-
-<p><%= link_to '戻る', user_path(current_user.id), class: 'btn follow-back-btn' %></p>
-<div class="push"></div>
+  <p><%= link_to '戻る', user_path(current_user.id), class: 'btn follow-back-btn' %></p>
+  <div class="push"></div>
 </body>

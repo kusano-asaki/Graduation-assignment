@@ -1,55 +1,53 @@
 <body id="player-body">
-<div id="player_title">
-<h1><%= @player.user.name %>さんの詳細</h1>
-</div>
-
-<div class="media">
-  <div class="media-left">
-    <% if @player.legend == "オクタン" %>
-      <%= image_tag 'オクタンApex Legends_20201001223559.jpg' %>
-    <% elsif @player.legend == "クリプト" %>
-      <%= image_tag 'クリプトApex Legends_20201001223639.jpg' %>
-    <% elsif @player.legend == "コースティック" %>
-      <%= image_tag 'コースティックApex Legends_20201001223537.jpg' %>
-    <% elsif @player.legend == "ジブラルタル" %>
-      <%= image_tag 'ジブラルタルApex Legends_20201001223502.jpg' %>
-    <% elsif @player.legend == "パスファインダー" %>
-      <%= image_tag 'パスファインダーApex Legends_20201001223517.jpg' %>
-    <% elsif @player.legend == "バンガロール" %>
-      <%= image_tag 'バンガロールApex Legends_20201001223754_1.jpg' %>
-    <% elsif @player.legend == "ブラッドハウンド" %>
-      <%= image_tag 'ブラッドハウンドApex Legends_20201001223453.jpg' %>
-    <% elsif @player.legend == "ミラージュ" %>
-      <%= image_tag 'ミラージュApex Legends_20201001223543.jpg' %>
-    <% elsif @player.legend == "ライフライン" %>
-      <%= image_tag 'ライフラインApex Legends_20201001223805.jpg' %>
-    <% elsif @player.legend == "ランパート" %>
-      <%= image_tag 'ランパートApex Legends_20201001223619.jpg' %>
-    <% elsif @player.legend == "レイス" %>
-      <%= image_tag 'レイスApex Legends_20201001223522.jpg' %>
-    <% elsif @player.legend == "レヴナント" %>
-      <%= image_tag 'レヴナントApex Legends_20201001223635.jpg' %>
-    <% elsif @player.legend == "ローバ" %>
-      <%= image_tag 'ローバApex Legends_20201001223627.jpg' %>
-    <% elsif @player.legend == "ワットソン" %>
-      <%= image_tag 'ワットソンApex Legends_20201001223603.jpg' %>
-    <% end %>
+  <div id="player_title">
+  <h1><%= @player.user.name %>さんの詳細</h1>
   </div>
-  <div class="media-body">
-    <h4 class="player-profile"><%= t 'attributes.player.legend' %><%=  ":　#{@player.legend}" %></h4>
-    <h4 class="player-profile"><%= t 'attributes.player.platform' %><%= ":　#{@player.platform}" %></h4>
-    <h4 class="player-profile"><%= t 'attributes.player.rank' %><%= ":　#{@player.rank}" %></h4>
-    <h4 class="player-profile"><%= t 'attributes.player.voice_chat' %><%= ":　#{@player.voice_chat}" %></h4>
-    <h4 class="player-profile"><%= t 'attributes.player.play_style' %><%= ":　#{@player.play_style }"%></h4>
-    <h4 class="player-profile"><%= t 'attributes.player.time_to_play' %><%= ":　#{@player.time_to_play.strftime("%H時%M分")}" %></h4>
-    <h4 class="player-profile"><%= t 'attributes.player.favorite_weapon' %><%= ":　#{@player.favorite_weapon }"%></h4>
-    <h4 class="player-profile"><%= t 'attributes.player.killdeath_point' %><%= ":　#{@player.killdeath_point}" %></h4>
-    <h4 class="player-profile"><%= t 'attributes.player.free' %>:<br><%= "#{@player.free}" %></h4>
+
+  <div class="media">
+    <div class="media-left">
+      <% if @player.legend == "オクタン" %>
+        <%= image_tag 'オクタンApex Legends_20201001223559.jpg' %>
+      <% elsif @player.legend == "クリプト" %>
+        <%= image_tag 'クリプトApex Legends_20201001223639.jpg' %>
+      <% elsif @player.legend == "コースティック" %>
+        <%= image_tag 'コースティックApex Legends_20201001223537.jpg' %>
+      <% elsif @player.legend == "ジブラルタル" %>
+        <%= image_tag 'ジブラルタルApex Legends_20201001223502.jpg' %>
+      <% elsif @player.legend == "パスファインダー" %>
+        <%= image_tag 'パスファインダーApex Legends_20201001223517.jpg' %>
+      <% elsif @player.legend == "バンガロール" %>
+        <%= image_tag 'バンガロールApex Legends_20201001223754_1.jpg' %>
+      <% elsif @player.legend == "ブラッドハウンド" %>
+        <%= image_tag 'ブラッドハウンドApex Legends_20201001223453.jpg' %>
+      <% elsif @player.legend == "ミラージュ" %>
+        <%= image_tag 'ミラージュApex Legends_20201001223543.jpg' %>
+      <% elsif @player.legend == "ライフライン" %>
+        <%= image_tag 'ライフラインApex Legends_20201001223805.jpg' %>
+      <% elsif @player.legend == "ランパート" %>
+        <%= image_tag 'ランパートApex Legends_20201001223619.jpg' %>
+      <% elsif @player.legend == "レイス" %>
+        <%= image_tag 'レイスApex Legends_20201001223522.jpg' %>
+      <% elsif @player.legend == "レヴナント" %>
+        <%= image_tag 'レヴナントApex Legends_20201001223635.jpg' %>
+      <% elsif @player.legend == "ローバ" %>
+        <%= image_tag 'ローバApex Legends_20201001223627.jpg' %>
+      <% elsif @player.legend == "ワットソン" %>
+        <%= image_tag 'ワットソンApex Legends_20201001223603.jpg' %>
+      <% end %>
+    </div>
+    <div class="media-body">
+      <h4 class="player-profile"><%= t 'attributes.player.legend' %><%=  ":　#{@player.legend}" %></h4>
+      <h4 class="player-profile"><%= t 'attributes.player.platform' %><%= ":　#{@player.platform}" %></h4>
+      <h4 class="player-profile"><%= t 'attributes.player.rank' %><%= ":　#{@player.rank}" %></h4>
+      <h4 class="player-profile"><%= t 'attributes.player.voice_chat' %><%= ":　#{@player.voice_chat}" %></h4>
+      <h4 class="player-profile"><%= t 'attributes.player.play_style' %><%= ":　#{@player.play_style }"%></h4>
+      <h4 class="player-profile"><%= t 'attributes.player.time_to_play' %><%= ":　#{@player.time_to_play.strftime("%H時%M分")}" %></h4>
+      <h4 class="player-profile"><%= t 'attributes.player.favorite_weapon' %><%= ":　#{@player.favorite_weapon }"%></h4>
+      <h4 class="player-profile"><%= t 'attributes.player.killdeath_point' %><%= ":　#{@player.killdeath_point}" %></h4>
+      <h4 class="player-profile"><%= t 'attributes.player.free' %>:<br><%= "#{@player.free}" %></h4>
+    </div>
   </div>
-</div>
-
-<p><%= link_to "#{@player.user.name}さんの詳細データをみる", user_path(@player.user.id), class: 'btn player-profile-btn' %></p>
-<p><%= link_to '一覧', players_path, class: 'btn player-profile-btn' %></p>
-
-<div class="push"></div>
+  <p><%= link_to "#{@player.user.name}さんの詳細データをみる", user_path(@player.user.id), class: 'btn player-profile-btn' %></p>
+  <p><%= link_to '一覧', players_path, class: 'btn player-profile-btn' %></p>
+  <div class="push"></div>
 </body>
