@@ -28,6 +28,11 @@ ja:
       email: Eメールアドレス
       password: パスワード
       password_confirmation: 確認用パスワード
+  contents:
+    link:
+      player-list: Player 一覧
+      back: 戻る
+      login: ログイン
   date:
     abbr_day_names:
     - 日

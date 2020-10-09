@@ -1,12 +1,12 @@
 <body id="player-body">
-<div id="player_title">
-  <h1>プレイヤーの新規登録</h1>
-  <p>自分のプレイスタイルを登録していこう！</p>
-</div>
-<div class="new-btn text-right">
-  <%= link_to 'player 一覧', players_path, class: 'btn' %>
-</div>
-<hr>
-<%= render 'form', player: @player %>
-<div class="push"></div>
+  <div id="player_title">
+    <h1>プレイヤーの新規登録</h1>
+    <p>自分のプレイスタイルを登録していこう！</p>
+  </div>
+  <div class="new-btn text-right">
+    <%= link_to t('contents.link.player-list'), players_path, class: 'btn' %>
+  </div>
+  <hr>
+  <%= render 'form', player: @player %>
+  <div class="push"></div>
 </body>

@@ -1,12 +1,12 @@
 <% if player.errors.any? %>
-<div id="error_explanation">
-  <h2><%= t 'errors.template.body'%></h2>
-  <% player.errors.full_messages.each do |msg| %>
-  <ul>
-    <li><%= msg %></li>
-  </ul>
-  <% end %>
-</div>
+  <div id="error_explanation">
+    <h2><%= t 'errors.template.body'%></h2>
+    <% player.errors.full_messages.each do |msg| %>
+    <ul>
+      <li><%= msg %></li>
+    </ul>
+    <% end %>
+  </div>
 <% end %>
 
 <%= form_with(model: @player, local: true) do |f| %>

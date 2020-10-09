@@ -22,7 +22,7 @@
   background-color: #fff;
 }
 
-.signup_title{
+.signup_title {
   margin: 90px 0 20px 0;
 }
 
@@ -33,6 +33,7 @@
 #error_explanation {
   margin-top: 80px;
 }
+
 #error_explanation ul {
   list-style: none;
  }
@@ -42,11 +43,6 @@
 }
 
 //user-show
-
-#user-body {
-  height: 100%;
-}
-
 #user-body:after{
   position: fixed;/*固定配置*/
   top: 0; left: 0;/*左上に固定*/
@@ -66,16 +62,6 @@
   height: 40px;
 }
 
-// .media-list {
-//   margin-top: 10px;
-//   background-color: #fff;
-//   padding-right: 5px;
-// }
-
-// .push2 {
-//   background-color: #dedede;
-// }
-
 .user-btn {
   margin: 10px 10px 10px 0;
 }
@@ -91,6 +77,7 @@
 .media-body {
   padding-left: 8px;
 }
+
 .player-info {
   margin: 30px 0 0 0;
 }

@@ -35,11 +35,7 @@
   margin-top: 30px;
 }
 
-
 //player_list
-#player-body {
-height: 100%;
-}
 
 #player-body:after{
   position: fixed;
@@ -51,7 +47,6 @@ height: 100%;
   background: linear-gradient(227deg, #EBEBEB 0%, #C5C6C8 100%), linear-gradient(155deg, rgba(255, 255, 255, 0.5) 5%, rgba(0, 0, 0, 0.5) 100%);
   background-blend-mode: multiply;
 }
-
 
 #player_title {
   margin-top: 100px;
