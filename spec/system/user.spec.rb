@@ -32,7 +32,7 @@ RSpec.describe 'User管理機能', type: :system do
     context 'テストユーザーAがログインしている' do
       let(:login_user) { user_a }
 
-      it 'テストユーザーBさんをフォローする' do
+      it 'テストユーザーBをフォローする' do
         visit players_path
         first('.player_btn').click
         first('.player-profile-btn').click
@@ -51,7 +51,7 @@ RSpec.describe 'User管理機能', type: :system do
         click_on 'フォローする'
       end
 
-      it 'テストユーザーBさんをフォロー解除する' do
+      it 'テストユーザーBをフォロー解除する' do
         visit players_path
         first('.player_btn').click
         first('.player-profile-btn').click
