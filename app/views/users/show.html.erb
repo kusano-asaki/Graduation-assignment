@@ -4,11 +4,12 @@
   </div>
 
   <% if current_user.id == @user.id  %>
-  <div class="list-name"><%= link_to 'フォロー/フォロワーリスト', follow_user_path(current_user.id), class: 'btn' %></div>
-  <div class="list-name"><%= link_to 'player 新規登録', new_player_path, class: 'btn' %></div>
+    <div class="list-name"><%= link_to 'フォロー/フォロワーリスト', follow_user_path(current_user.id), class: 'btn' %></div>
+    <div class="list-name"><%= link_to 'player 新規登録', new_player_path, class: 'btn' %></div>
   <% end %>
 
   <% if current_user.id != @user.id %>
+    <p>フォローしてメッセージを送ってみよう！</p><br>
     <%= render 'follow_form', user: @user %>
   <% end %>
 
