@@ -20,6 +20,25 @@ RSpec.describe 'User管理機能', type: :system do
     end
   end
 
+  describe '新規作成' do
+    before do
+      visit new_session_path
+      fill_in 'Eメールアドレス', with: login_user.email
+      fill_in 'パスワード', with: login_user.password
+      fill_in '確認用パスワード', with: login_user.password_confirmation
+      find('.signup_btn').click
+    end
+    context 'ログイン失敗' do
+      let(:login_user) { user_a }
+
+      it '失敗のメッセージが表示される' do
+        click_on 'ログアウト'
+        find('.signup_btn').click
+        expect(page).to have_content 'ログインに失敗しました'
+      end
+    end
+  end
+
   describe 'フォロー機能' do
     before do
       visit new_session_path

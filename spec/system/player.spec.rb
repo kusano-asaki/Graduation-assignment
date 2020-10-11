@@ -2,6 +2,7 @@ require 'rails_helper'
 RSpec.describe 'Player管理機能', type: :system do
   let(:user_a) { FactoryBot.create(:user) }
   let(:user_b) { FactoryBot.create(:user, name: 'テストユーザーB', email: 'bbb@aaa.com') }
+  let(:user_c)  { FactoryBot.create(:user, name: 'テストユーザーC', email: ' ', password: ' ', password_confirmation: ' ') }
 
   before do
     @player_1 = FactoryBot.create(:player, user: user_a)
@@ -14,9 +15,9 @@ RSpec.describe 'Player管理機能', type: :system do
   end
 
   describe 'player crud' do
-    context 'player新規作成' do
-      let(:login_user) { user_a }
+    let(:login_user) { user_a }
 
+    context 'player新規作成' do
       it 'テストユーザーAのplayerの内容が表示される' do
         visit new_player_path
         click_on 'commit'
@@ -24,8 +25,6 @@ RSpec.describe 'Player管理機能', type: :system do
       end
     end
     context 'player編集' do
-      let(:login_user) { user_a }
-
       it 'テストユーザーAのplayerの内容が更新表示される' do
         visit edit_player_path(id: @player_1)
         fill_in 'フリーコメント', with: 'hogehoge'
@@ -34,8 +33,6 @@ RSpec.describe 'Player管理機能', type: :system do
       end
     end
     context 'player削除' do
-      let(:login_user) { user_a }
-
       it 'テストユーザーAのplayerの内容が削除される' do
         visit user_path(user_a)
         click_on '削除'
@@ -102,12 +99,18 @@ RSpec.describe 'Player管理機能', type: :system do
   end
 
   describe 'アクセス制限' do
+    let(:login_user) { user_a }
     context 'テストユーザーAがログインしている' do
-      let(:login_user) { user_a }
-
       it 'テストユーザーBの編集ページにはアクセスできない' do
         visit edit_player_path(id: @player_2)
         expect(page).to have_content '他のユーザーデータは編集できません'
+      end
+    end
+    context 'ユーザーがログインしていない場合' do
+      it 'アプリ機能の画面へはアクセスできない' do
+        click_on 'ログアウト'
+        visit players_path
+        expect(page).to have_content 'アプリをご利用になるにはログインしてください'
       end
     end
   end
