@@ -25,28 +25,28 @@ ja:
         email: Eメールアドレス
         password: パスワード
         password_confirmation: 確認用パスワード
-  models:
-    player: プレイヤー情報
-    user: ユーザー 情報
-  attributes:
-    player:
-      id: ID
-      legend: レジェンド
-      platform: プラットフォーム
-      voice_chat: ボイスチャット
-      play_style: プレイスタイル
-      time_to_play: ゲームプレイ時間帯
-      favorite_weapon: よく利用する武器
-      rank: ランク
-      killdeath_point: K/D
-      free: フリーコメント
-      user_name: ユーザー名
-    user:
-      id: ID
-      name: お名前
-      email: Eメールアドレス
-      password: パスワード
-      password_confirmation: 確認用パスワード
+  # models:
+  #   player:
+  #   user:
+  # attributes:
+  #   player:
+  #     id: ID
+  #     legend: レジェンド
+  #     platform: プラットフォーム
+  #     voice_chat: ボイスチャット
+  #     play_style: プレイスタイル
+  #     time_to_play: ゲームプレイ時間帯
+  #     favorite_weapon: よく利用する武器
+  #     rank: ランク
+  #     killdeath_point: K/D
+  #     free: フリーコメント
+  #     user_name: ユーザー名
+  #   user:
+  #     id: ID
+  #     name: お名前
+  #     email: Eメールアドレス
+  #     password: パスワード
+  #     password_confirmation: 確認用パスワード
   contents:
     link:
       player-list: Player 一覧
