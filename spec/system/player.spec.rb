@@ -5,7 +5,7 @@ RSpec.describe 'Player管理機能', type: :system do
 
   before do
     @player_1 = FactoryBot.create(:player, user: user_a)
-    @player_2 = FactoryBot.create(:player, free: 'よろしくお願いします！', user: user_b)
+    @player_2 = FactoryBot.create(:player, legend: 3, rank: 4, platform: 2, free: 'よろしくお願いします！', user: user_b)
     visit new_session_path
     fill_in 'Eメールアドレス', with: login_user.email
     fill_in 'パスワード', with: login_user.password
@@ -41,6 +41,62 @@ RSpec.describe 'Player管理機能', type: :system do
         click_on '削除'
         page.driver.browser.switch_to.alert.accept
         expect(page).to have_content '削除しました'
+      end
+    end
+  end
+
+  describe 'player検索' do
+    let(:login_user) { user_a }
+
+    context 'レジェンドで検索できる' do
+      it 'テストユーザーBの情報のみ表示される' do
+        visit players_path
+        select 'ジブラルタル', from: 'q_legend_eq'
+        click_on '検索'
+        expect(page).to have_content 'よろしくお願いします！'
+      end
+    end
+    context 'ランクで検索できる' do
+      it 'テストユーザーBの情報のみ表示される' do
+        visit players_path
+        select 'プラチナ', from: 'q_rank_eq'
+        click_on '検索'
+        expect(page).to have_content 'よろしくお願いします！'
+      end
+    end
+    context 'プラットフォームで検索できる' do
+      it 'テストユーザーBの情報のみ表示される' do
+        visit players_path
+        select 'Xbox', from: 'q_platform_eq'
+        click_on '検索'
+        expect(page).to have_content 'よろしくお願いします！'
+      end
+    end
+    context 'レジェンドとランクで検索できる' do
+      it 'テストユーザーBの情報のみ表示される' do
+        visit players_path
+        select 'ジブラルタル', from: 'q_legend_eq'
+        select 'プラチナ', from: 'q_rank_eq'
+        click_on '検索'
+        expect(page).to have_content 'よろしくお願いします！'
+      end
+    end
+    context 'レジェンドとプラットフォームで検索できる' do
+      it 'テストユーザーBの情報のみ表示される' do
+        visit players_path
+        select 'ジブラルタル', from: 'q_legend_eq'
+        select 'Xbox', from: 'q_platform_eq'
+        click_on '検索'
+        expect(page).to have_content 'よろしくお願いします！'
+      end
+    end
+    context 'ランクとプラットフォームで検索できる' do
+      it 'テストユーザーBの情報のみ表示される' do
+        visit players_path
+        select 'プラチナ', from: 'q_rank_eq'
+        select 'Xbox', from: 'q_platform_eq'
+        click_on '検索'
+        expect(page).to have_content 'よろしくお願いします！'
       end
     end
   end
