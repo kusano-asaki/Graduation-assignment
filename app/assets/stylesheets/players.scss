@@ -36,7 +36,6 @@
 }
 
 //player_list
-
 #player-body:after{
   position: fixed;
   top: 0; left: 0;
@@ -60,6 +59,28 @@
   height: 40px;
 }
 
+table, th, td {
+  width: auto;
+}
+
+.player_list td {
+  border-top: 1px solid #666;
+  padding: 4px;
+}
+
+details {
+  transition: .5s;
+}
+
+details[open] {
+  // height: 100%;
+}
+
+summary:hover {
+  cursor: pointer;
+  background-color: #CCCCCC;
+}
+
 //show
 .media-body h4 {
   padding: 6px;
@@ -67,6 +88,10 @@
 
 .player-profile-btn {
   margin-top: 5px;
+}
+
+.list_title {
+  font-weight: bold;
 }
 
 //new

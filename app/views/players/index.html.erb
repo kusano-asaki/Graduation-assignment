@@ -45,15 +45,18 @@
             <% end %>
           </div>
           <div class="media-body">
-            <h4><%= t 'attributes.player.user_name'%>:<%= player.user.name %></h4>
-            <li><%= t 'attributes.player.platform'%>:<%= player.platform %></li>
-            <li><%= t 'attributes.player.rank'%>:<%= player.rank %></li>
-            <li><%= t 'attributes.player.killdeath_point'%>:<%= player.killdeath_point %></li>
-            <li><%= t 'attributes.player.play_style'%>:<%= player.play_style %></li>
-            <li><%= t 'attributes.player.free'%>:<br><%= player.free %></li>
-            <div class="text-right">
-              <%= link_to 'プレイヤー詳細', player_path(player), class: 'btn player_btn' %>
-            </div>
+            <table class="player_list">
+              <tr><td class="list_title"><%= t 'attributes.player.user_name'%></td><td><%= player.user.name %></td></tr>
+              <tr><td class="list_title"><%= t 'attributes.player.platform'%></td><td><%= player.platform %></td></tr>
+              <tr><td class="list_title"><%= t 'attributes.player.rank'%></td><td><%= player.rank %></td></tr>
+              <tr><td class="list_title"><%= t 'attributes.player.killdeath_point'%></td><td><%= player.killdeath_point %></td></tr>
+              <tr><td class="list_title"><%= t 'attributes.player.play_style'%></td><td><%= player.play_style %></td></tr>
+              <tr>
+                <td class="list_title"><%= t 'attributes.player.free'%></td>
+                <td><details><summary>みる！</summary><p><%= player.free %></p></details></td>
+              </tr>
+              <tr><td><%= link_to 'プレイヤー詳細', player_path(player), class: 'btn player_btn' %></td><td></td></tr>
+            </table>
           </div>
         </div>
       </ul>
