@@ -50,15 +50,20 @@
               <% end %>
             </div>
             <div class="media-body">
-              <li><%= t 'attributes.player.legend' %>:<%= player.legend %></li>
-              <li><%= t 'attributes.player.platform' %>:<%= player.platform %></li>
-              <li><%= t 'attributes.player.rank' %>:<%= player.rank %></li>
-              <li><%= t 'attributes.player.voice_chat' %>:<%= player.voice_chat %></li>
-              <li><%= t 'attributes.player.play_style' %>:<%= player.play_style %></li>
-              <li><%= t 'attributes.player.time_to_play' %>:<%= player.time_to_play.strftime("%H時%M分") %></li>
-              <li><%= t 'attributes.player.favorite_weapon' %>:<%= player.favorite_weapon %></li>
-              <li><%= t 'attributes.player.killdeath_point' %>:<%= player.killdeath_point %></li>
-              <li><%= t 'attributes.player.free' %>:<br><%= player.free %></li>
+              <table class="user_show_player_list">
+              <tr><td><%= t 'attributes.player.legend' %></td><td><%= player.legend %></td></tr>
+              <tr><td><%= t 'attributes.player.platform' %></td><td><%= player.platform %></td></tr>
+              <tr><td><%= t 'attributes.player.rank' %></td><td><%= player.rank %></td></tr>
+              <tr><td><%= t 'attributes.player.voice_chat' %></td><td><%= player.voice_chat %></td></tr>
+              <tr><td><%= t 'attributes.player.play_style' %></td><td><%= player.play_style %></td></tr>
+              <tr><td><%= t 'attributes.player.time_to_play' %></td><td><%= player.time_to_play.strftime("%H時%M分") %></td></tr>
+              <tr><td><%= t 'attributes.player.favorite_weapon' %></td><td><%= player.favorite_weapon %></td></tr>
+              <tr><td><%= t 'attributes.player.killdeath_point' %></td><td><%= player.killdeath_point %></td></tr>
+              <tr>
+                <td><%= t 'attributes.player.free'%></td>
+                <td><details><summary>詳細</summary><p><%= player.free %></p></details></td>
+              </tr>
+                </table>
               <% if current_user.id == @user.id  %>
                 <%= link_to '編集', edit_player_path(player.id), class: 'btn user-btn' %>
                 <%= link_to '削除', player_path(player.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn user-btn' %>
