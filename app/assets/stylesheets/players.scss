@@ -36,7 +36,6 @@
 }
 
 //player_list
-
 #player-body:after{
   position: fixed;
   top: 0; left: 0;
@@ -58,6 +57,32 @@
 
 .push {
   height: 40px;
+}
+
+table, th, td {
+  width: auto;
+}
+
+.player_list {
+  table-layout: fixed;
+}
+
+.player_list td {
+  border-top: 1px solid #666;
+  padding: 4px;
+}
+
+details {
+  transition: .5s;
+}
+
+details[open] {
+  height: 100%;
+}
+
+summary:hover {
+  cursor: pointer;
+  background-color: #CCCCCC;
 }
 
 //show
