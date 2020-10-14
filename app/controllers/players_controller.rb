@@ -4,7 +4,7 @@ class PlayersController < ApplicationController
 
   def index
     @q = Player.ransack(params[:q])
-    @players = @q.result.includes(:user)
+    @players = @q.result.includes(:user).page(params[:page]).per(20)
   end
 
   def show

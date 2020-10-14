@@ -72,15 +72,14 @@ details {
   transition: .5s;
 }
 
-details[open] {
-  // height: 100%;
-}
-
 summary:hover {
   cursor: pointer;
   background-color: #CCCCCC;
 }
 
+#paginate {
+  text-align: center;
+}
 //show
 .media-body h4 {
   padding: 6px;

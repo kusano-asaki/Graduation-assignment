@@ -14,33 +14,33 @@
         <div class="push2">
           <div class="media-left media-image">
             <% if player.legend == "オクタン" %>
-              <%= image_tag('octane_Apex Legends_20201001223559.jpg') %>
+              <%= image_tag 'octane_Apex Legends_20201001223559.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "クリプト" %>
-              <%= image_tag('crypto_Apex Legends_20201001223639.jpg') %>
+              <%= image_tag 'crypto_Apex Legends_20201001223639.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "コースティック" %>
-              <%= image_tag('caustic_Apex Legends_20201001223537.jpg') %>
+              <%= image_tag 'caustic_Apex Legends_20201001223537.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "ジブラルタル" %>
-              <%= image_tag('gibraltar_Apex Legends_20201001223502.jpg') %>
+              <%= image_tag 'gibraltar_Apex Legends_20201001223502.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "パスファインダー" %>
-              <%= image_tag('pathfinder_Apex Legends_20201001223517.jpg') %>
+              <%= image_tag 'pathfinder_Apex Legends_20201001223517.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "バンガロール" %>
-              <%= image_tag('bangaloreApex Legends_20201001223754_1.jpg') %>
+              <%= image_tag 'bangaloreApex Legends_20201001223754_1.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "ブラッドハウンド" %>
-              <%= image_tag('bloodhound_Apex Legends_20201001223453.jpg') %>
+              <%= image_tag 'bloodhound_Apex Legends_20201001223453.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "ミラージュ" %>
-              <%= image_tag('mirage_Apex Legends_20201001223543.jpg') %>
+              <%= image_tag 'mirage_Apex Legends_20201001223543.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "ライフライン" %>
-              <%= image_tag('lifeline_Apex Legends_20201001223805.jpg') %>
+              <%= image_tag 'lifeline_Apex Legends_20201001223805.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "ランパート" %>
-              <%= image_tag('rampart_Apex Legends_20201001223619.jpg') %>
+              <%= image_tag 'rampart_Apex Legends_20201001223619.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "レイス" %>
-               <%= image_tag('wraith_Apex Legends_20201001223522.jpg') %>
+               <%= image_tag 'wraith_Apex Legends_20201001223522.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "レヴナント" %>
-               <%= image_tag('revenant_Apex Legends_20201001223635.jpg') %>
+               <%= image_tag 'revenant_Apex Legends_20201001223635.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "ローバ" %>
-              <%= image_tag('loba_Apex Legends_20201001223627.jpg') %>
+              <%= image_tag 'loba_Apex Legends_20201001223627.jpg', width: '130px', height: '180px' %>
             <% elsif player.legend == "ワットソン" %>
-              <%= image_tag('wattson_Apex Legends_20201001223603.jpg') %>
+              <%= image_tag 'wattson_Apex Legends_20201001223603.jpg', width: '130px', height: '180px' %>
             <% else %>
             <% end %>
           </div>
@@ -61,6 +61,9 @@
         </div>
       </ul>
     <% end %>
+  </div>
+  <div id="paginate">
+    <%= paginate @players %>
   </div>
   <div class="push"></div>
 </body>
