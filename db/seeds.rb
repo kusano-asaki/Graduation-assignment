@@ -16,18 +16,31 @@
   )
 end
 
+legend_num = [0,1,2,3,4,5,6,7,8,9,10,11,12,13]
+platform_num = [0,1,2]
+voice_chat_num = [0,1]
+rank_num = [0,1,2,3,4,5,6]
+favorite_weapon_name = ["G7","ウィングマン","オルタネーター","マスティフ"]
+user_num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
 20.times do |n|
+  l_nu = legend_num.sample
+  p_nu = platform_num.sample
+  v_nu = voice_chat_num.sample
+  r_nu = rank_num.sample
+  f_na = favorite_weapon_name.sample
+  u_nu = user_num.sample
   Player.create!(
-    legend: 1,
-    platform: 1,
-    voice_chat: 1,
+    legend: l_nu,
+    platform: p_nu,
+    voice_chat: v_nu,
     play_style: "enjoy",
     time_to_play: "2020-10-09 12:00:00",
-    favorite_weapon: "マシンガン",
-    rank: 1,
+    favorite_weapon: f_na,
+    rank: r_nu,
     killdeath_point: 1.5,
     free: "よろしくお願いします",
-    user_id: 20
+    user_id: u_nu
   )
 end
 
