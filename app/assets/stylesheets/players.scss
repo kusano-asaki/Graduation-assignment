@@ -72,10 +72,6 @@ details {
   transition: .5s;
 }
 
-details[open] {
-  // height: 100%;
-}
-
 summary:hover {
   cursor: pointer;
   background-color: #CCCCCC;
