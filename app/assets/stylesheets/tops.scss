@@ -17,23 +17,16 @@
   background-repeat: no-repeat;
   background-color: rgba(255,255,255,0.5);
   background-blend-mode: lighten;
+  ;
 }
 
 .top_link {
-  margin-left: 30px;
+  margin-right: 30px;
+  padding: 5px;
 }
 
 .top_link a {
   text-decoration: none;
-}
-
-.top_links {
-  margin-left: 20px;
-}
-
-.app_detail {
-  margin-left: 300px;
-  padding: 30px;
 }
 
 .app_detail_text {
@@ -42,4 +35,28 @@
 
 .app-title {
   font-size: 50px;
+}
+
+.top_show {
+  height: 5rem;
+  text-align: center;
+  margin-left: 200px;
+}
+
+#top_detail {
+  margin-left: 120px;
+  margin-top: -25px;
+}
+
+#top_detail summary {
+  outline:none;
+  display:block;
+}
+
+#top_detail summary::-webkit-details-marker {
+  display:none;
+}
+
+#top_detail summary:hover {
+  background-color: transparent;
 }

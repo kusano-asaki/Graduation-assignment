@@ -1,19 +1,21 @@
 <body id="top_page">
   <div class="text-center">
     <h1 class="app-title">AP Team Factory</h1>
+  </div>
+    <div class="top_show">
       <p class="top_link">
         <%= link_to 'はじめよう', new_user_path %>
-        <a class="top_links" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            このアプリについて
-        </a>
+      </p>
+      <details id="top_detail">
+        <summary id="top_detail">このアプリについて</summary>
+          <h2>Apex Legendsの仲間を作ろう</h2>
+            <p class="app_detail_text">
+              Twitterや掲示板でのやりとりがしづらい、<br>
+              けどプレイスタイルやモチベーションが似た人とプレイしたいなど、<br>
+              ユーザーの内容が詳細に分かってからコミュニケーションを<br>
+              取りたい方はぜひ登録してユーザー 検索してみよう！
+            </p>
+      </details>
+      <div class="push"></div>
   </div>
-  <div class="collapse app_detail" id="collapseExample">
-      <h2>Apex Legendsの仲間を作ろう</h2>
-          <p class="app_detail_text">
-            Twitterや掲示板でのやりとりがしづらい、<br>
-            けどプレイスタイルやモチベーションが似た人とプレイしたいなど、<br>
-            ユーザーの内容が詳細に分かってからコミュニケーションを<br>
-            取りたい方はぜひ登録してユーザー 検索してみよう！
-          </p>
-      </div>
 </body>
