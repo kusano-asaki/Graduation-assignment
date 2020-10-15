@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.password_confirmation = user_params[:password]
     if @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user), notice: 'user登録,ログインしました'
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmatio)
   end
 
 end

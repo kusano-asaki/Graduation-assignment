@@ -5,6 +5,7 @@ class PlayersController < ApplicationController
   def index
     @q = Player.ransack(params[:q])
     @players = @q.result.includes(:user).page(params[:page]).per(20)
+    @check = params[:q]
   end
 
   def show

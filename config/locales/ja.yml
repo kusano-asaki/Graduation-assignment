@@ -24,7 +24,6 @@ ja:
         name: お名前
         email: Eメールアドレス
         password: パスワード
-        password_confirmation: 確認用パスワード
   models:
     player:
     user:
@@ -46,7 +45,6 @@ ja:
       name: お名前
       email: Eメールアドレス
       password: パスワード
-      password_confirmation: 確認用パスワード
   contents:
     link:
       player-list: Player 一覧
