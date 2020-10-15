@@ -80,6 +80,22 @@ summary:hover {
 #paginate {
   text-align: center;
 }
+
+.result_title {
+  padding-right: 10px;
+}
+
+.search_result h5 {
+  margin-top: 10px;
+  width: 115px;
+  border-bottom: 1px solid #000;
+}
+
+.result_legend {
+  padding-right: 40px;
+  font-weight: bold;
+}
+
 //show
 .media-body h4 {
   padding: 6px;

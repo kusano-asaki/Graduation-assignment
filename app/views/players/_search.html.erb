@@ -28,5 +28,80 @@
     </div>
     </div>
     <% end %>
+    <div class="search_result">
+      <% unless @check.blank? %>
+        <h5>あなたの検索条件</h5>
+        <table>
+          <tr>
+            <td class="result_title"><%= t('attributes.player.legend') %>:</td>
+            <td class="result_legend">
+              <% if @q.legend_eq == 0 %>
+                <%= "オクタン" %>
+              <% elsif @q.legend_eq == 1 %>
+                <%= "クリプト" %>
+              <% elsif @q.legend_eq == 2 %>
+                <%= "コースティック" %>
+              <% elsif @q.legend_eq == 3 %>
+                <%= "ジブラルタル" %>
+              <% elsif @q.legend_eq == 4 %>
+                <%= "バンガロール" %>
+              <% elsif @q.legend_eq == 5 %>
+                <%= "パスファインダー" %>
+              <% elsif @q.legend_eq == 6 %>
+                <%= "ブラッドハウンド" %>
+              <% elsif @q.legend_eq == 7 %>
+                <%= "ミラージュ" %>
+              <% elsif @q.legend_eq == 8 %>
+                <%= "ライフライン" %>
+              <% elsif @q.legend_eq == 9 %>
+                <%= "ランパート" %>
+              <% elsif @q.legend_eq == 10 %>
+                <%= "レイス" %>
+              <% elsif @q.legend_eq == 11 %>
+                <%= "レヴナント" %>
+              <% elsif @q.legend_eq == 12 %>
+                <%= "ローバ" %>
+              <% elsif @q.legend_eq == 13 %>
+                <%= "ワットソン" %>
+              <% else %>
+                <%= "指定なし" %>
+              <% end %>
+            </td>
+            <td class="result_title"><%= t('attributes.player.rank') %>:</td>
+            <td class="result_legend">
+              <% if @q.rank_eq == 0 %>
+                <%= "遊ばない" %>
+              <% elsif @q.rank_eq == 1 %>
+                <%= "ブロンズ" %>
+              <% elsif @q.rank_eq == 2 %>
+                <%= "シルバー" %>
+              <% elsif @q.rank_eq == 3 %>
+                <%= "ゴールド" %>
+              <% elsif @q.rank_eq == 4 %>
+                <%= "プラチナ" %>
+              <% elsif @q.rank_eq == 5 %>
+                <%= "ダイヤ" %>
+              <% elsif @q.rank_eq == 6 %>
+                <%= "マスター＆プレデター" %>
+              <% else %>
+                <%= "指定なし" %>
+              <% end %>
+            </td>
+            <td class="result_title"><%= t('attributes.player.platform') %>:</td>
+            <td class="result_legend">
+              <% if @q.platform_eq == 0 %>
+                <%= "PS4" %>
+              <% elsif @q.platform_eq == 1 %>
+                <%= "PC" %>
+              <% elsif @q.platform_eq == 2 %>
+                <%= "Xbox" %>
+              <% else %>
+                <%= "指定なし" %>
+              <% end %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
   </div>
 </div>
