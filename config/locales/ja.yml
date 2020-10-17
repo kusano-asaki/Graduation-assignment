@@ -29,6 +29,7 @@ ja:
     user:
   attributes:
     player:
+      one: player
       id: ID
       legend: レジェンド
       platform: プラットフォーム
@@ -41,6 +42,7 @@ ja:
       free: フリーコメント
       user_name: ユーザー名
     user:
+      one: user
       id: ID
       name: お名前
       email: Eメールアドレス

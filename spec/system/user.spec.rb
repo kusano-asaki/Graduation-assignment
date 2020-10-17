@@ -13,19 +13,27 @@ RSpec.describe 'User管理機能', type: :system do
         fill_in 'お名前', with: 'testc'
         fill_in 'Eメールアドレス', with: 'test@ttt.com'
         fill_in 'パスワード', with: 'password'
-        fill_in '確認用パスワード', with: 'password'
         find('.signup_btn').click
         expect(page).to have_content 'user登録,ログインしました'
       end
     end
   end
 
+  describe 'アクセス制限' do
+    context 'ユーザーがログインしていない場合' do
+      it 'アプリ機能の画面へはアクセスできない' do
+        visit players_path
+        expect(page).to have_content 'アプリをご利用になるにはログインしてください'
+      end
+    end
+  end
+
+  # 以下失敗
   describe '新規作成' do
     before do
       visit new_session_path
       fill_in 'Eメールアドレス', with: login_user.email
       fill_in 'パスワード', with: login_user.password
-      fill_in '確認用パスワード', with: login_user.password_confirmation
       find('.signup_btn').click
     end
     context 'ログイン失敗' do
@@ -44,7 +52,6 @@ RSpec.describe 'User管理機能', type: :system do
       visit new_session_path
       fill_in 'Eメールアドレス', with: login_user.email
       fill_in 'パスワード', with: login_user.password
-      fill_in '確認用パスワード', with: login_user.password_confirmation
       find('.signup_btn').click
     end
 
@@ -53,6 +60,7 @@ RSpec.describe 'User管理機能', type: :system do
 
       it 'テストユーザーBをフォローする' do
         visit players_path
+        binding.irb
         first('.player_btn').click
         first('.player-profile-btn').click
         click_on 'フォローする'
@@ -87,7 +95,6 @@ RSpec.describe 'User管理機能', type: :system do
       visit new_session_path
       fill_in 'Eメールアドレス', with: login_user.email
       fill_in 'パスワード', with: login_user.password
-      fill_in '確認用パスワード', with: login_user.password_confirmation
       find('.signup_btn').click
     end
     context 'テストユーザーAがログインしている' do
@@ -96,6 +103,7 @@ RSpec.describe 'User管理機能', type: :system do
         visit players_path
         first('.player_btn').click
         first('.player-profile-btn').click
+        binding.irb
         click_on 'フォローする'
       end
 
@@ -124,7 +132,6 @@ RSpec.describe 'User管理機能', type: :system do
         click_on 'ログアウト'
         fill_in 'Eメールアドレス', with: 'bbb@aaa.com'
         fill_in 'パスワード', with: 'password'
-        fill_in '確認用パスワード', with: 'password'
         find('.signup_btn').click
         visit user_path(user_b)
         click_on 'フォロー/フォロワーリスト'
@@ -135,7 +142,6 @@ RSpec.describe 'User管理機能', type: :system do
       it 'メッセージを確認したら既読になっている' do
         fill_in 'Eメールアドレス', with: 'aaa@aaa.com'
         fill_in 'パスワード', with: 'password'
-        fill_in '確認用パスワード', with: 'password'
         find('.signup_btn').click
         click_on 'マイページ'
         click_on 'フォロー/フォロワーリスト'
