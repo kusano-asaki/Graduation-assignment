@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
   skip_before_action :login_require
+  before_action :new_login_check, only: [:new]
+
   def new
   end
 
@@ -17,5 +19,12 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
     redirect_to new_session_path, notice: 'ログアウトしました'
+  end
+
+  private
+  def new_login_check
+    if current_user
+      redirect_to  user_path(@current_user.id), notice: 'ログインずみのためアクセスできません'
+    end
   end
 end

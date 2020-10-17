@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :login_require
+  before_action :new_login_check, only: [:new]
 
   def new
     @user = User.new
@@ -36,6 +37,12 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmatio)
+  end
+
+  def new_login_check
+    if current_user
+      redirect_to  user_path(@current_user.id), notice: 'ログインずみのためアクセスできません'
+    end
   end
 
 end
