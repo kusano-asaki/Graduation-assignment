@@ -101,7 +101,6 @@ RSpec.describe 'User管理機能', type: :system, xhr: true do
         visit players_path
         first('.player_btn').click
         first('.player-profile-btn').click
-        binding.irb
         click_on 'フォローする'
       end
 

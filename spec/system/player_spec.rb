@@ -31,7 +31,7 @@ RSpec.describe 'Player管理機能', type: :system do
         expect(page).to have_content 'hogehoge'
       end
     end
-    #失敗
+    
     context 'player削除' do
       before do
         visit user_path(user_a)
