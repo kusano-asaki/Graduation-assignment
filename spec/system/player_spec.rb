@@ -33,11 +33,12 @@ RSpec.describe 'Player管理機能', type: :system do
     end
     #失敗
     context 'player削除' do
-      it 'テストユーザーAのplayerの内容が削除される' do
+      before do
         visit user_path(user_a)
-        binding.irb
         click_on '削除'
         page.driver.browser.switch_to.alert.accept
+      end
+      it 'テストユーザーAのplayerの内容が削除される' do
         expect(page).to have_content '削除しました'
       end
     end
