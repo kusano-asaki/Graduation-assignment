@@ -54,5 +54,6 @@
     <%= f.submit('メッセージ送信', class: 'btn') %>
   </div>
 <% end %>
+<p class="text-right"><%= link_to t('contents.link.back'), follow_user_path(current_user.id), class: 'btn follow-back-btn' %></p>
 <div class="push"></div>
 </body>
