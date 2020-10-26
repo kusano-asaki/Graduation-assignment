@@ -7,10 +7,17 @@
       <h3 class="follow-title">フォローリスト</h3>
         <% @following_users.each do |follow_user| %>
           <div class="col-md-6">
-            <p class="follow-name"><%= follow_user.name %></p>
+            <p class="follow-name"><%= follow_user.name %>
+              <% msg = Message.where(user_id: follow_user.id) %>
+              <% msg_check = msg.where(read: false)%>
+              <% if msg_check.count >= 1 %>
+                <span class="new_message"><%= "新着メッセージあり!" %></span>
+              <%end%>
+            </p>
           </div>
           <table class="follow-list">
-            <td><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: follow_user.id), method: :post, class: 'btn msg-btn' %></td>
+            <td><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: follow_user.id), method: :post, class: 'btn msg-btn' %>
+            </td>
             <td><div class="follow-btn"><%= render 'follow_form', user: follow_user %></div></td>
           </table>
         <% end %>
